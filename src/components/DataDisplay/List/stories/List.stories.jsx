@@ -1,69 +1,226 @@
-import React from "react"
-import List from "../List"
+import React from "react";
+import List from "../List";
+import { useArgs } from "storybook/internal/preview-api";
 
 export default {
-    title: "Components/DataDisplay/List",
-    component: List
-}
-const Template = (args) => <List {...args} />
+  title: "Components/DataDisplay/List",
+  component: List,
+};
+
+const Template = (args) => <List {...args} />;
 
 export const BasicList = Template.bind({});
 BasicList.args = {
-    name: "Letter",
-    secondname: "AltArrowDown",
-    sx: {
-        border: "1px solid gray",
-        width: '100%',
-        maxWidth: '100%'
-        },
-    listItems: [
-        {
-            disablepadding : true,
-            primary: "first inbox",
-            color: 'primary',
-            size: 40,
-            iconStyle: "BoldDuotone",
-          
-            sx: {
+  sx: {
+    width: "100%",
+    maxWidth: "100%",
+  },
+  listItems: [
+    {
+      name: "Buildings",
+      secondname: "AltArrowDown",
+      primary: "First inbox",
+      color: "primary",
+      size: 40,
+      iconStyle: "BoldDuotone",
+      Icolor: "red",
+    },
+    {
+      name: "Buildings",
+      secondname: "AltArrowDown",
+      primary: "First inbox",
+      color: "primary",
+      size: 40,
+      iconStyle: "BoldDuotone",
+      Icolor: "red",
+    },
+    {
+      name: "Buildings",
+      secondname: "AltArrowDown",
+      primary: "First inbox",
+      color: "primary",
+      size: 40,
+      iconStyle: "BoldDuotone",
+      Icolor: "red",
+    },
+    {
+      primary: "First inbox",
+      color: "primary",
+      secondname: "AltArrowDown",
+      color: "primary",
+      size: 40,
+      iconStyle: "BoldDuotone",
+      Icolor: "red",
+    },
+    {
+      primary: "First inbox",
+      color: "primary",
+      secondname: "AltArrowDown",
+      color: "primary",
+      size: 40,
+      iconStyle: "BoldDuotone",
+      Icolor: "red",
+    },
+  ],
+};
 
-            }
-            
-        },
-        {
-            disablepadding : true,
-            primary: "first inbox",
-            color: 'red',
-            size: 40,
-            iconStyle: "BoldDuotone",
+export const NestedList = Template.bind({});
+NestedList.args = {
+  sx: {
+    width: "100%",
+    maxWidth: "100%",
+  },
+  listItems: [
+    {
+      name: "Buildings",
+      secondname: "AltArrowDown",
+      primary: "First inbox",
+      color: "primary",
+      size: 40,
+      iconStyle: "BoldDuotone",
+      Icolor: "red",
+      useNested: true,
+    },
+    {
+      name: "Buildings",
+      secondname: "AltArrowDown",
+      primary: "First inbox",
+      color: "primary",
+      size: 40,
+      iconStyle: "BoldDuotone",
+      Icolor: "red",
+      useNested: true,
+    },
+    {
+      name: "Buildings",
+      secondname: "AltArrowDown",
+      primary: "First inbox",
+      color: "primary",
+      size: 40,
+      iconStyle: "BoldDuotone",
+      Icolor: "red",
+      useNested: true,
+    },
+    {
+      primary: "First inbox",
+      color: "primary",
+      secondname: "AltArrowDown",
+      color: "primary",
+      size: 40,
+      iconStyle: "BoldDuotone",
+      Icolor: "red",
+      useNested: true,
+    },
+    {
+      primary: "First inbox",
+      color: "primary",
+      secondname: "AltArrowDown",
+      color: "primary",
+      size: 40,
+      iconStyle: "BoldDuotone",
+      Icolor: "red",
+      useNested: true,
+    },
+  ],
+};
 
-            sx: {
-                color: "red"
-            }
-            
-        },
-        {
-            disablepadding : true,
-            primary: "Inbox",
-            color: 'red',
-            size: 40,
-            iconStyle: "BoldDuotone",
+export const FolderList = Template.bind({});
+FolderList.args = {
+  sx: {
+    width: "50%",
+    maxWidth: "100%",
+  },
+  listItems: [
+    {
+      name: "Gallery",
+      primary: "Galery",
+      secondary: "December 25, 2024",
+      color: "primary",
+      size: 40,
+      iconStyle: "BoldDuotone",
+      Icolor: "red",
+    },
+    {
+      name: "ClapperboardPlay",
+      primary: "First inbox",
+      secondary: "December 25, 2024",
+      color: "primary",
+      size: 40,
+      iconStyle: "BoldDuotone",
+      Icolor: "red",
+    },
+    {
+      name: "MusicNotes",
+      primary: "First inbox",
+      secondary: "December 25, 2024",
+      color: "primary",
+      size: 40,
+      iconStyle: "BoldDuotone",
+      Icolor: "red",
+    },
+  ],
+};
 
-            sx: {
-                color: "red"
-            }
-            
-        },
-        {
-            disablepadding : true,
-            primary: "Spam",
-            color: 'red',
-            size: 40,
-            iconStyle: "BoldDuotone",
-
-            sx: {
-                color: "red"
-            }
-            
-        },
-    ]
-}
+export const ListControlList = Template.bind({});
+ListControlList.args = {
+  sx: {
+    width: "50%",
+    maxWidth: "100%",
+  },
+  listItems: [
+    {
+      primary: "First Inbox",
+      secondary: "December 25, 2024",
+      color: "primary",
+      size: 40,
+      iconStyle: "BoldDuotone",
+      Icolor: "red",
+      useCheckbox: true,
+    },
+    {
+      primary: "Second Inbox",
+      secondary: "December 25, 2024",
+      color: "secondary",
+      size: 40,
+      iconStyle: "BoldDuotone",
+      Icolor: "red",
+      useCheckbox: true,
+    },
+    {
+      primary: "Third Inbox",
+      secondary: "December 25, 2024",
+      color: "primary",
+      size: 40,
+      iconStyle: "BoldDuotone",
+      Icolor: "red",
+      useCheckbox: true,
+    },
+    {
+      primary: "Third Inbox",
+      secondary: "December 25, 2024",
+      color: "primary",
+      size: 40,
+      iconStyle: "BoldDuotone",
+      Icolor: "red",
+      useSwitch: true,
+    },
+    {
+      primary: "Third Inbox",
+      secondary: "December 25, 2024",
+      color: "primary",
+      size: 40,
+      iconStyle: "BoldDuotone",
+      Icolor: "red",
+      useSwitch: true,
+    },
+    {
+      primary: "Third Inbox",
+      secondary: "December 25, 2024",
+      color: "primary",
+      size: 40,
+      iconStyle: "BoldDuotone",
+      Icolor: "red",
+      useSwitch: true,
+    },
+  ],
+};

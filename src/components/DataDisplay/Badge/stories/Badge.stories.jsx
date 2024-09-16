@@ -1,309 +1,504 @@
-import React from "react"
-import Badge from "../Badge"
+import React from "react";
 
+import { StyledBadge, NMSBadge } from "../../Badge";
+import { NMSAvatar, NMSStack } from "../../Avatar";
+import Icon from "../../../Foundation/Icons/Icon";
+import Typography from "../../../Typography";
 
 export default {
-    title: "Components/DataDisplay/Badge",
-    component: Badge
-}
+  title: "SAMPLE/DataDisplay/Badge",
+  component: NMSBadge,
+};
 
-const Template = (args) => <Badge {...args} />
+const Template = ({ badges, stack, icon }) => (
+  <NMSStack {...stack}>
+    {badges.map((badge, index) => {
+      const { icon, ...badges } = badge;
+      return (
+        <NMSBadge key={index} {...badges}>
+          <Icon {...icon} />
+        </NMSBadge>
+      );
+    })}
+  </NMSStack>
+);
+
+const Statusbadge = ({ badges, stack, icon }) => (
+  <NMSStack {...stack}>
+    {badges.map((badge, index) => {
+      const { avatar, ...badges } = badge;
+      return (
+        <StyledBadge key={index} {...badges}>
+          <NMSAvatar {...avatar} />
+        </StyledBadge>
+      );
+    })}
+  </NMSStack>
+);
 
 export const BasicBadge = Template.bind({});
 BasicBadge.args = {
-    name: "Letter",
-    direction: 'row',
-    badges : [{
-    color: "secondary",
-    iconStyle: "Bold",
-    size: 24,
-    color: "primary",
-    badgeContent: 5,
-    Iconsx: {
-       color: "secondary.main"
-    },
-    Badgesx: {
-        color: "secondary.main"
-    }
-
-}]
-}
-
-export const MaximumBadge = Template.bind({});
-MaximumBadge.args = {
-    direction: 'row',
-    name: "Letter",
+  stack: {
+    direction: "row",
     spacing: 2,
-    badges: [
-        {
-            iconStyle: "Bold",
-            size: 24,
-            color: "secondary",
-            Badgesx: {
-                color: 'red'
-            },
-            Iconsx: {
-                color: "yellow"
-            },  
-            name: "Letter",
-            badgeContent: 99,
-      
-        
-        },
-        {
-            iconStyle: "Bold",
-            size:24,
-            color: "secondary",
-            Badgesx: {
-                color: 'red'
-            },
-            Iconsx: {
-                color: "yellow"
-            },  
-            name: "Letter",
-            badgeContent: 100,
-      
-            max: 99
-        
-        },
-        {
-            iconStyle: "Bold",
-            size: 24,
-            color: "secondary",
-            Badgesx: {
-                color: 'red'
-            },
-            Iconsx: {
-                color: "yellow"
-            },  
-            name: "Letter",
-            badgeContent: 1000,
-      
-            max: 999
-        
-        },
-    ]
-}
+  },
+  badges: [
+    {
+      badgeVariant: "dot",
+      badgeContent: " ",
+      color: "error",
+      anchorOrigin: {
+        vertical: "top",
+        horizontal: "right",
+      },
+      overlap: "circular",
+      sizes: { width: "40px", height: "40px" },
+      icon: {
+        name: "Letter",
+        size: 24,
+        iconStyle: "BoldDuotone",
+        color: "error",
+      },
+    },
+  ],
+};
+
+export const MaximumValueBadge = Template.bind({});
+MaximumValueBadge.args = {
+  stack: {
+    direction: "row",
+    spacing: 2,
+  },
+  badges: [
+    {
+      badgeContent: 9,
+      color: "error",
+      anchorOrigin: {
+        vertical: "top",
+        horizontal: "right",
+      },
+      overlap: "circular",
+      sizes: { width: "40px", height: "40px" },
+      icon: {
+        name: "Letter",
+        size: 24,
+        iconStyle: "BoldDuotone",
+        color: "error",
+      },
+    },
+    {
+      badgeContent: 100,
+      max: 99,
+      color: "error",
+      anchorOrigin: {
+        vertical: "top",
+        horizontal: "right",
+      },
+      overlap: "circular",
+      sizes: { width: "40px", height: "40px" },
+      icon: {
+        name: "Letter",
+        size: 24,
+        iconStyle: "BoldDuotone",
+        color: "error",
+      },
+    },
+    {
+      badgeContent: 1000,
+      max: 999,
+      color: "error",
+      anchorOrigin: {
+        vertical: "top",
+        horizontal: "right",
+      },
+      overlap: "circular",
+      sizes: { width: "40px", height: "40px" },
+      icon: {
+        name: "Letter",
+        size: 24,
+        iconStyle: "BoldDuotone",
+        color: "error",
+      },
+    },
+  ],
+};
 
 export const OverlapBadge = Template.bind({});
 OverlapBadge.args = {
-    direction: 'row',
+  stack: {
+    direction: "row",
     spacing: 2,
-    name: "Home",
-    badges: [
-        {
-            iconStyle: "Bold",
-            size: 24,
-            color: "primary",
-            Badgesx: {
-                color: 'red'
-            },
-            Iconsx: {
-                color: "yellow"
-            },  
-
-            variant: "dot",
-            overlap: "circular"     
-        },
-        {
-            iconStyle: "Bold",
-            size: 24,
-            color: "primary",
-            Badgesx: {
-                color: 'red'
-            },
-            Iconsx: {
-                color: "yellow"
-            },  
-            variant: "dot",
-            overlap: "circular"     
-        },
-        {
-            iconStyle: "Bold",
-            size: 24,
-            color: "primary",
-            Badgesx: {
-                color: 'red'
-            },
-            Iconsx: {
-                color: "yellow"
-            },  
-            variant: "dot",
-            overlap: "circular"     
-        },
-    
-    ]
-}
+  },
+  badges: [
+    {
+      badgeVariant: "dot",
+      badgeContent: " ",
+      color: "primary",
+      anchorOrigin: {
+        vertical: "top",
+        horizontal: "right",
+      },
+      overlap: "circular",
+      sizes: { width: "40px", height: "40px" },
+      icon: {
+        name: "Letter",
+        size: 24,
+        iconStyle: "BoldDuotone",
+        color: "primary",
+      },
+    },
+    {
+      badgeVariant: "dot",
+      badgeContent: " ",
+      color: "secondary",
+      anchorOrigin: {
+        vertical: "top",
+        horizontal: "right",
+      },
+      overlap: "circular",
+      sizes: { width: "40px", height: "40px" },
+      icon: {
+        name: "Letter",
+        size: 24,
+        iconStyle: "BoldDuotone",
+        color: "secondary",
+      },
+    },
+    {
+      badgeVariant: "dot",
+      badgeContent: " ",
+      color: "success",
+      anchorOrigin: {
+        vertical: "top",
+        horizontal: "right",
+      },
+      overlap: "circular",
+      sizes: { width: "40px", height: "40px" },
+      icon: {
+        name: "Letter",
+        size: 24,
+        iconStyle: "BoldDuotone",
+        color: "success",
+      },
+    },
+    {
+      badgeVariant: "dot",
+      badgeContent: " ",
+      color: "info",
+      anchorOrigin: {
+        vertical: "top",
+        horizontal: "right",
+      },
+      overlap: "circular",
+      sizes: { width: "40px", height: "40px" },
+      icon: {
+        name: "Letter",
+        size: 24,
+        iconStyle: "BoldDuotone",
+        color: "info",
+      },
+    },
+    {
+      badgeVariant: "dot",
+      badgeContent: " ",
+      color: "warning",
+      anchorOrigin: {
+        vertical: "top",
+        horizontal: "right",
+      },
+      overlap: "circular",
+      sizes: { width: "40px", height: "40px" },
+      icon: {
+        name: "Letter",
+        size: 24,
+        iconStyle: "BoldDuotone",
+        color: "warning",
+      },
+    },
+    {
+      badgeVariant: "dot",
+      badgeContent: " ",
+      color: "error",
+      anchorOrigin: {
+        vertical: "top",
+        horizontal: "right",
+      },
+      overlap: "circular",
+      sizes: { width: "40px", height: "40px" },
+      icon: {
+        name: "Letter",
+        size: 24,
+        iconStyle: "BoldDuotone",
+        color: "error",
+      },
+    },
+  ],
+};
 
 export const ColorBadge = Template.bind({});
 ColorBadge.args = {
-  
-    name: "Letter",
-    direction: 'row',
+  stack: {
+    direction: "row",
     spacing: 2,
-    badges : [{
-    color: "secondary",
-    iconStyle: "Bold",
-    size: 24,
-    color: "primary",
-    badgeContent: 5,
-    Badgesx: {
-        color: "primary.main"
-    }
-
-},{
-    color: "secondary",
-    iconStyle: "Bold",
-    size: 24,
-
-    badgeContent: 5,
-    Iconsx: {
-       color: "secondary.main"
+  },
+  badges: [
+    {
+      badgeContent: 1,
+      color: "error",
+      anchorOrigin: {
+        vertical: "top",
+        horizontal: "right",
+      },
+      overlap: "circular",
+      sizes: { width: "40px", height: "40px" },
+      icon: {
+        name: "Letter",
+        size: 24,
+        iconStyle: "BoldDuotone",
+        color: "primary",
+      },
     },
-    Badgesx: {
-        color: "secondary.main"
-    }
-
-},
-{
-    color: "success",
-    iconStyle: "Bold",
-    size: 24,
-
-    badgeContent: 5,
-    Badgesx: {
-        color: "success.main"
-    }
-
-},
-{
-    color: "secondary",
-    iconStyle: "Bold",
-    size: 24,
-    color: "warning",
-    badgeContent: 5,
-    Badgesx: {
-        color: "warning.main"
-    }
-
-},
-{
-    color: "secondary",
-    iconStyle: "Bold",
-    size: 24,
-    color: "error",
-    badgeContent: 5,
-    Badgesx: {
-        color: "error.main"
-    }
-
-}]
-}
+    {
+      badgeContent: 1,
+      color: "secondary",
+      anchorOrigin: {
+        vertical: "top",
+        horizontal: "right",
+      },
+      overlap: "circular",
+      sizes: { width: "40px", height: "40px" },
+      icon: {
+        name: "Letter",
+        size: 24,
+        iconStyle: "BoldDuotone",
+        color: "secondary",
+      },
+    },
+    {
+      badgeContent: 1,
+      color: "success",
+      anchorOrigin: {
+        vertical: "top",
+        horizontal: "right",
+      },
+      overlap: "circular",
+      sizes: { width: "40px", height: "40px" },
+      icon: {
+        name: "Letter",
+        size: 24,
+        iconStyle: "BoldDuotone",
+        color: "success",
+      },
+    },
+    {
+      badgeContent: 1,
+      color: "info",
+      anchorOrigin: {
+        vertical: "top",
+        horizontal: "right",
+      },
+      overlap: "circular",
+      sizes: { width: "40px", height: "40px" },
+      icon: {
+        name: "Letter",
+        size: 24,
+        iconStyle: "BoldDuotone",
+        color: "info",
+      },
+    },
+    {
+      badgeContent: 1,
+      color: "warning",
+      anchorOrigin: {
+        vertical: "top",
+        horizontal: "right",
+      },
+      overlap: "circular",
+      sizes: { width: "40px", height: "40px" },
+      icon: {
+        name: "Letter",
+        size: 24,
+        iconStyle: "BoldDuotone",
+        color: "warning",
+      },
+    },
+    {
+      badgeContent: 1,
+      color: "error",
+      anchorOrigin: {
+        vertical: "top",
+        horizontal: "right",
+      },
+      overlap: "circular",
+      sizes: { width: "40px", height: "40px" },
+      icon: {
+        name: "Letter",
+        size: 24,
+        iconStyle: "BoldDuotone",
+        color: "error",
+      },
+    },
+  ],
+};
 
 export const DotBadge = Template.bind({});
 DotBadge.args = {
-  
-    name: "Letter",
-    direction: 'row',
+  stack: {
+    direction: "row",
     spacing: 2,
-    badges : [{
-    color: "secondary",
-    iconStyle: "Bold",
-    size: 24,
-    color: "primary",
-    variant: 'dot',
-    badgeContent: '',
-    Badgesx: {
-        color: "primary.main"
-    }
-
-},{
-    color: "secondary",
-    iconStyle: "Bold",
-    size: 24,
-
-    variant: 'dot',
-    badgeContent: '',
-    Iconsx: {
-       color: "secondary.main"
-    },
-    Badgesx: {
-        color: "secondary.main"
-    }
-
-},
-{
-    color: "success",
-    iconStyle: "Bold",
-    size: 24,
-
-    variant: 'dot',
-    badgeContent: '',
-    Badgesx: {
-        color: "success.main"
-    }
-
-},
-{
-    color: "secondary",
-    iconStyle: "Bold",
-    size: 24,
-    color: "warning",
-    variant: 'dot',
-    badgeContent: '',
-    Badgesx: {
-        color: "warning.main"
-    }
-
-},
-{
-    color: "secondary",
-    iconStyle: "Bold",
-    size: 24,
-    color: "error",
-    variant: 'dot',
-    badgeContent: '',
-    Badgesx: {
-        color: "error.main"
-    }
-
-}]
-}
-
-export const StatusBadge = Template.bind({});
-StatusBadge.args = {
-    isStyledBadge: true,
-    direction: 'row',
-    spacing: 0,
-    badges : [{
-    color: "error",
-    variant: 'dot',
-    overlap: "circular",
-    src: "https://img.freepik.com/free-psd/3d-illustration-human-avatar-profile_23-2150671126.jpg",
-    alt: 'Sample',
-    anchorOrigin : {
-        vertical: "bottom",
-        horizontal: "right"
-    },},
+  },
+  badges: [
     {
+      badgeVariant: "dot",
+      badgeContent: " ",
+      color: "primary",
+      anchorOrigin: {
+        vertical: "top",
+        horizontal: "right",
+      },
+
+      sizes: { width: "40px", height: "40px" },
+      icon: {
+        name: "Letter",
+        size: 24,
+        iconStyle: "BoldDuotone",
+        color: "primary",
+      },
+    },
+    {
+      badgeVariant: "dot",
+      badgeContent: " ",
+      color: "secondary",
+      anchorOrigin: {
+        vertical: "top",
+        horizontal: "right",
+      },
+      sizes: { width: "40px", height: "40px" },
+      icon: {
+        name: "Letter",
+        size: 24,
+        iconStyle: "BoldDuotone",
+        color: "secondary",
+      },
+    },
+    {
+      badgeVariant: "dot",
+      badgeContent: " ",
+      color: "success",
+      anchorOrigin: {
+        vertical: "top",
+        horizontal: "right",
+      },
+      sizes: { width: "40px", height: "40px" },
+      icon: {
+        name: "Letter",
+        size: 24,
+        iconStyle: "BoldDuotone",
         color: "success",
-        variant: 'dot',
-        overlap: "circular",
+      },
+    },
+    {
+      badgeVariant: "dot",
+      badgeContent: " ",
+      color: "info",
+      anchorOrigin: {
+        vertical: "top",
+        horizontal: "right",
+      },
+      sizes: { width: "40px", height: "40px" },
+      icon: {
+        name: "Letter",
+        size: 24,
+        iconStyle: "BoldDuotone",
+        color: "info",
+      },
+    },
+    {
+      badgeVariant: "dot",
+      badgeContent: " ",
+      color: "warning",
+      anchorOrigin: {
+        vertical: "top",
+        horizontal: "right",
+      },
+      sizes: { width: "40px", height: "40px" },
+      icon: {
+        name: "Letter",
+        size: 24,
+        iconStyle: "BoldDuotone",
+        color: "warning",
+      },
+    },
+    {
+      badgeVariant: "dot",
+      badgeContent: " ",
+      color: "error",
+      anchorOrigin: {
+        vertical: "top",
+        horizontal: "right",
+      },
+      sizes: { width: "40px", height: "40px" },
+      icon: {
+        name: "Letter",
+        size: 24,
+        iconStyle: "BoldDuotone",
+        color: "error",
+      },
+    },
+  ],
+};
+
+export const StatusBadge = Statusbadge.bind({});
+StatusBadge.args = {
+  stack: {
+    direction: "row",
+    spacing: 2,
+  },
+  badges: [
+    {
+      badgeVariant: "dot",
+      badgeContent: " ",
+      color: "error",
+      anchorOrigin: {
+        vertical: "top",
+        horizontal: "right",
+      },
+      overlap: "circular",
+      avatar: {
+        alt: "user avatar 1",
         src: "https://img.freepik.com/free-psd/3d-illustration-human-avatar-profile_23-2150671126.jpg",
-        alt: 'Sample',
-        anchorOrigin : {
-            vertical: "bottom",
-            horizontal: "right"
-        },},
-        {
-            color: "warning",
-            variant: 'dot',
-            overlap: "circular",
-            src: "https://img.freepik.com/free-psd/3d-illustration-human-avatar-profile_23-2150671126.jpg",
-            alt: 'Sample',
-            anchorOrigin : {
-                vertical: "bottom",
-                horizontal: "right"
-            },},
-]
-}
+        sx: { width: "40px", height: "40px" },
+      },
+    },
+    {
+      badgeVariant: "dot",
+      badgeContent: " ",
+      color: "success",
+      anchorOrigin: {
+        vertical: "top",
+        horizontal: "right",
+      },
+      overlap: "circular",
+      avatar: {
+        alt: "user avatar 1",
+        src: "https://img.freepik.com/free-psd/3d-illustration-human-avatar-profile_23-2150671126.jpg",
+        sx: { width: "40px", height: "40px" },
+      },
+    },
+    {
+      badgeVariant: "dot",
+      badgeContent: " ",
+      color: "warning",
+      anchorOrigin: {
+        vertical: "top",
+        horizontal: "right",
+      },
+      overlap: "circular",
+      avatar: {
+        alt: "user avatar 1",
+        src: "https://img.freepik.com/free-psd/3d-illustration-human-avatar-profile_23-2150671126.jpg",
+        sx: { width: "40px", height: "40px" },
+      },
+    },
+  ],
+};

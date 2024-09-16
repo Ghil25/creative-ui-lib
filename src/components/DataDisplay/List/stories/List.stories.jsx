@@ -1,226 +1,74 @@
 import React from "react";
-import List from "../List";
-import { useArgs } from "storybook/internal/preview-api";
+import {
+  List,
+  ListItem,
+  ListItemAvatar,
+  ListItemButton,
+  ListItemText,
+  ListItemIcon,
+  ListSubheader,
+  Box,
+} from "../../List";
+import { NMSAvatar } from "../../Avatar";
 
 export default {
-  title: "Components/DataDisplay/List",
+  title: "SAMPLE/DataDisplay/List",
   component: List,
 };
 
-const Template = (args) => <List {...args} />;
+const Template = ({
+  list,
+  listItems,
+  //   listItemAvatar,
+  //   listItemButton,
+  //   listItemText,
+  //   listSubheader,
+  box,
+}) => (
+  <Box {...box}>
+    <List {...list}>
+      {listItems.map((item, index) => {
+        const { listItemAvatar, listItemButton, listItemText, listItems } =
+          item;
+        return (
+          <ListItem key={index} {...listItems}>
+            {listItemAvatar && (
+              <ListItemAvatar {...listItemAvatar}></ListItemAvatar>
+            )}
+            {listItemButton && (
+              <ListItemButton {...listItemButton}>
+                <ListItemText {...listItemText} />
+              </ListItemButton>
+            )}
+          </ListItem>
+        );
+      })}
+    </List>
+  </Box>
+);
 
-export const BasicList = Template.bind({});
+const BasicList = Template.bind({});
 BasicList.args = {
-  sx: {
-    width: "100%",
-    maxWidth: "100%",
+  list: {
+    sx: {
+      width: "100%",
+      maxWidth: "100%",
+    },
   },
   listItems: [
     {
-      name: "Buildings",
-      secondname: "AltArrowDown",
-      primary: "First inbox",
-      color: "primary",
-      size: 40,
-      iconStyle: "BoldDuotone",
-      Icolor: "red",
-    },
-    {
-      name: "Buildings",
-      secondname: "AltArrowDown",
-      primary: "First inbox",
-      color: "primary",
-      size: 40,
-      iconStyle: "BoldDuotone",
-      Icolor: "red",
-    },
-    {
-      name: "Buildings",
-      secondname: "AltArrowDown",
-      primary: "First inbox",
-      color: "primary",
-      size: 40,
-      iconStyle: "BoldDuotone",
-      Icolor: "red",
-    },
-    {
-      primary: "First inbox",
-      color: "primary",
-      secondname: "AltArrowDown",
-      color: "primary",
-      size: 40,
-      iconStyle: "BoldDuotone",
-      Icolor: "red",
-    },
-    {
-      primary: "First inbox",
-      color: "primary",
-      secondname: "AltArrowDown",
-      color: "primary",
-      size: 40,
-      iconStyle: "BoldDuotone",
-      Icolor: "red",
-    },
-  ],
-};
-
-export const NestedList = Template.bind({});
-NestedList.args = {
-  sx: {
-    width: "100%",
-    maxWidth: "100%",
-  },
-  listItems: [
-    {
-      name: "Buildings",
-      secondname: "AltArrowDown",
-      primary: "First inbox",
-      color: "primary",
-      size: 40,
-      iconStyle: "BoldDuotone",
-      Icolor: "red",
-      useNested: true,
-    },
-    {
-      name: "Buildings",
-      secondname: "AltArrowDown",
-      primary: "First inbox",
-      color: "primary",
-      size: 40,
-      iconStyle: "BoldDuotone",
-      Icolor: "red",
-      useNested: true,
-    },
-    {
-      name: "Buildings",
-      secondname: "AltArrowDown",
-      primary: "First inbox",
-      color: "primary",
-      size: 40,
-      iconStyle: "BoldDuotone",
-      Icolor: "red",
-      useNested: true,
-    },
-    {
-      primary: "First inbox",
-      color: "primary",
-      secondname: "AltArrowDown",
-      color: "primary",
-      size: 40,
-      iconStyle: "BoldDuotone",
-      Icolor: "red",
-      useNested: true,
-    },
-    {
-      primary: "First inbox",
-      color: "primary",
-      secondname: "AltArrowDown",
-      color: "primary",
-      size: 40,
-      iconStyle: "BoldDuotone",
-      Icolor: "red",
-      useNested: true,
-    },
-  ],
-};
-
-export const FolderList = Template.bind({});
-FolderList.args = {
-  sx: {
-    width: "50%",
-    maxWidth: "100%",
-  },
-  listItems: [
-    {
-      name: "Gallery",
-      primary: "Galery",
-      secondary: "December 25, 2024",
-      color: "primary",
-      size: 40,
-      iconStyle: "BoldDuotone",
-      Icolor: "red",
-    },
-    {
-      name: "ClapperboardPlay",
-      primary: "First inbox",
-      secondary: "December 25, 2024",
-      color: "primary",
-      size: 40,
-      iconStyle: "BoldDuotone",
-      Icolor: "red",
-    },
-    {
-      name: "MusicNotes",
-      primary: "First inbox",
-      secondary: "December 25, 2024",
-      color: "primary",
-      size: 40,
-      iconStyle: "BoldDuotone",
-      Icolor: "red",
-    },
-  ],
-};
-
-export const ListControlList = Template.bind({});
-ListControlList.args = {
-  sx: {
-    width: "50%",
-    maxWidth: "100%",
-  },
-  listItems: [
-    {
-      primary: "First Inbox",
-      secondary: "December 25, 2024",
-      color: "primary",
-      size: 40,
-      iconStyle: "BoldDuotone",
-      Icolor: "red",
-      useCheckbox: true,
-    },
-    {
-      primary: "Second Inbox",
-      secondary: "December 25, 2024",
-      color: "secondary",
-      size: 40,
-      iconStyle: "BoldDuotone",
-      Icolor: "red",
-      useCheckbox: true,
-    },
-    {
-      primary: "Third Inbox",
-      secondary: "December 25, 2024",
-      color: "primary",
-      size: 40,
-      iconStyle: "BoldDuotone",
-      Icolor: "red",
-      useCheckbox: true,
-    },
-    {
-      primary: "Third Inbox",
-      secondary: "December 25, 2024",
-      color: "primary",
-      size: 40,
-      iconStyle: "BoldDuotone",
-      Icolor: "red",
-      useSwitch: true,
-    },
-    {
-      primary: "Third Inbox",
-      secondary: "December 25, 2024",
-      color: "primary",
-      size: 40,
-      iconStyle: "BoldDuotone",
-      Icolor: "red",
-      useSwitch: true,
-    },
-    {
-      primary: "Third Inbox",
-      secondary: "December 25, 2024",
-      color: "primary",
-      size: 40,
-      iconStyle: "BoldDuotone",
-      Icolor: "red",
-      useSwitch: true,
+      listItemAvatar: {
+        primary: "First inbox",
+        color: "primary",
+        size: 40,
+        iconStyle: "BoldDuotone",
+        Icolor: "red",
+      },
+      listItemButton: {
+        primary: "First inbox",
+        color: "primary",
+        secondname: "AltArrowDown",
+      },
     },
   ],
 };

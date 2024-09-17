@@ -3,7 +3,8 @@ import { ListItemText as NMSListItemText } from "@mui/material";
 import PropTypes from "prop-types";
 
 const ListItemText = ({
-  children,
+  disableTypography,
+  inset,
   primary,
   primaryTypographyProps,
   secondary,
@@ -13,6 +14,8 @@ const ListItemText = ({
 }) => {
   return (
     <NMSListItemText
+      disableTypography={disableTypography}
+      inset={inset}
       primary={primary}
       primaryTypographyProps={primaryTypographyProps}
       secondary={secondary}
@@ -40,8 +43,8 @@ ListItemText.propTypes = {
   ...NMSListItemText.PropTypes,
 };
 
-ListItemText.defaultProps = {
-  primary: "primary",
-};
+// ListItemText.defaultProps = {
+//   primary: "primary",
+// };
 
 export default ListItemText;

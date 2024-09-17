@@ -2,14 +2,24 @@ import React from "react";
 import { List as NMSList } from "@mui/material";
 import PropTypes from "prop-types";
 
-const List = ({ children, component, disablePadding, subheader, sx, fullWidth, ...props }) => {
+const List = ({
+  children,
+  classes,
+  component,
+  dense,
+  disablePadding,
+  subheader,
+  sx,
+  ...props
+}) => {
   return (
     <NMSList
       component={component}
+      classes={classes}
+      dense={dense}
       disablePadding={disablePadding}
       subheader={subheader}
       sx={sx}
-      fullwidth={fullWidth}
       {...props}
     >
       {children}
@@ -32,9 +42,9 @@ List.propTypes = {
   ]),
 };
 
-List.defaultProps = {
-  children: "NMS List",
-  disablePadding: false,
-};
+// List.defaultProps = {
+//   children: "NMS List",
+//   disablePadding: false,
+// };
 
 export default List;

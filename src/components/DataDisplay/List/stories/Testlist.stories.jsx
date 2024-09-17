@@ -1,5 +1,5 @@
 import React from "react";
-import List from "../List";
+import List from "../TestList";
 import { useArgs } from "storybook/internal/preview-api";
 
 export default {
@@ -13,7 +13,7 @@ export const BasicList = Template.bind({});
 BasicList.args = {
   sx: {
     width: "100%",
-    maxWidth: "100%",
+    maxwidth: "100%",
   },
   listItems: [
     {

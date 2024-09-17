@@ -23,8 +23,8 @@ ListItemAvatar.propTypes = {
   ...NMSListItemAvatar.PropTypes,
 };
 
-ListItemAvatar.default = {
-  children: "NMS ListItemAvatar",
-};
+// ListItemAvatar.default = {
+//   children: "NMS ListItemAvatar",
+// };
 
 export default ListItemAvatar;

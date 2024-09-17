@@ -2,12 +2,32 @@ import React from "react";
 import { ListItemButton as NMSListItemButton } from "@mui/material";
 import PropTypes from "prop-types";
 
-const ListItemButton = ({ alignItems, children, component, sx, fullWidth, ...props }) => {
+const ListItemButton = ({
+  alignItems,
+  autoFocus,
+  children,
+  component,
+  dense,
+  disabled,
+  disableGutters,
+  divider,
+  focusVisibleClassName,
+  selected,
+  sx,
+  ...props
+}) => {
   return (
     <NMSListItemButton
       alignItems={alignItems}
+      autoFocus={autoFocus}
+      children={children}
       component={component}
-      fullwidth={fullWidth}
+      dense={dense}
+      disabled={disabled}
+      disableGutters={disableGutters}
+      divider={divider}
+      focusVisibleClassName={focusVisibleClassName}
+      selected={selected}
       sx={sx}
       {...props}
     >
@@ -31,9 +51,9 @@ ListItemButton.propTypes = {
   ...NMSListItemButton.PropTypes,
 };
 
-ListItemButton.defaultProps = {
-  alignItems: "center",
-  children: "NMS ListItemButton",
-};
+// ListItemButton.defaultProps = {
+//   alignItems: "center",
+//   children: "NMS ListItemButton",
+// };
 
 export default ListItemButton;

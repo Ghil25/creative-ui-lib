@@ -1,7 +1,6 @@
 import React from "react";
 import { ListItemIcon as NMSListItemIcon } from "@mui/material";
 import PropTypes from "prop-types";
-import * as SolarIconSet from "solar-icon-set";
 
 const ListItemIcon = ({ children, sx, ...props }) => {
   return (
@@ -24,8 +23,8 @@ ListItemIcon.propTypes = {
   ...NMSListItemIcon.PropTypes,
 };
 
-ListItemIcon.defaultProps = {
-  children: <SolarIconSet.BoxMinimalistic size={24} iconStyle="BoldDuotone" />,
-};
+// ListItemIcon.defaultProps = {
+//   children: <SolarIconSet.BoxMinimalistic size={24} iconStyle="BoldDuotone" />,
+// };
 
 export default ListItemIcon;

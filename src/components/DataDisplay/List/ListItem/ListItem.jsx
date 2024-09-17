@@ -5,19 +5,35 @@ import PropTypes from "prop-types";
 const ListItem = ({
   alignItems,
   children,
+  classes,
   component,
+  components,
+  componentsProps,
+  containerProps,
+  dense,
+  disableGutters,
+  disablePadding,
+  divider,
   secondaryAction,
+  slotProps,
+  slot,
   sx,
-  fullWidth,
   ...props
 }) => {
   return (
     <NMSListItem
       alignItems={alignItems}
+      children={children}
+      classes={classes}
       component={component}
+      dense={dense}
+      disableGutters={disableGutters}
+      disablePadding={disablePadding}
+      divider={divider}
       secondaryAction={secondaryAction}
+      slotProps={slotProps}
+      slot={slot}
       sx={sx}
-      fullwidth={fullWidth}
       {...props}
     >
       {children}
@@ -41,9 +57,9 @@ ListItem.propTypes = {
   ...NMSListItem.PropTypes,
 };
 
-ListItem.defaultProps = {
-  alignItems: "center",
-  children: "NMS ListItem",
-};
+// ListItem.defaultProps = {
+//   alignItems: "center",
+//   children: "NMS ListItem",
+// };
 
 export default ListItem;

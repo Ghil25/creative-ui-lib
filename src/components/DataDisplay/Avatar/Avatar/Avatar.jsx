@@ -1,7 +1,7 @@
 import { Avatar as MUIAvatar } from "@mui/material";
 import React from "react";
 // import PropTypes from "prop-types";
-function NMSAvatar({ alt, src, sx, variant, children, ...props }) {
+function Avatar({ alt, src, sx, variant, children, ...props }) {
   return (
     <MUIAvatar alt={alt} src={src} sx={sx} variant={variant} {...props}>
       {children}
@@ -9,7 +9,7 @@ function NMSAvatar({ alt, src, sx, variant, children, ...props }) {
   );
 }
 
-export default NMSAvatar;
+export default Avatar;
 
 // MUIAvatar.propTypes = {
 //   alt: PropTypes.string,

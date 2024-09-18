@@ -1,289 +1,365 @@
 import React from "react";
-import AvatarCollection from "../AvatarCollection";
-import {
-  Pageview as PageviewIcon,
-  AccountCircleSharp as AccountCircleSharpIcon,
-  Person3Sharp as Person3SharpIcon,
-} from "@mui/icons-material";
-
+// import NMSAvatar from "../Avatar";
+// import NMSAvatarGroup from "../AvatarGroup";
+// import NMSStack from "../Stack";
+import Badge from "../../Badge/Badge";
+import Icon from "../../../Foundation/Icons/Icon";
+import { Avatar, AvatarGroup, Stack } from "..";
 export default {
   title: "Components/DataDisplay/Avatar",
-  component: AvatarCollection,
+  component: Avatar,
+  argTypes: {
+    groupParent: {
+      direction: { options: ["row", "column"] },
+    },
+    avatars: {
+      color: { control: "select", options: ["primary", "secondary"] },
+    },
+  },
 };
 
-const Template = (args) => <AvatarCollection {...args} />;
-const Apot = (aaa) => <AvatarCollection {...aaa} />;
+const Template = ({
+  avatars,
+  useAvatarGroup,
+  groupParent,
+  badge,
+  usebadge = false,
+}) => (
+  <>
+    {useAvatarGroup ? (
+      <AvatarGroup {...groupParent}>
+        {avatars.map((avatar, index) => {
+          return <Avatar key={index} {...avatar} />;
+        })}
+      </AvatarGroup>
+    ) : (
+      <Stack {...groupParent}>
+        {avatars.map((avatar, index) => {
+          const {
+            usebadge,
+            color,
+            variant,
+            overlap,
+            anchorOrigin,
+            badgeContent,
+          } = avatar;
+          return usebadge ? (
+            <Badge key={index} {...avatar}>
+              <Avatar {...avatar} />
+            </Badge>
+          ) : (
+            <Avatar key={index} {...avatar} />
+          );
+        })}
+      </Stack>
+    )}
+  </>
+);
 
-export const ImageAvatars = Apot.bind({});
+export const ImageAvatars = Template.bind({});
 ImageAvatars.args = {
-  direction: "row",
-  spacing: 4,
+  useAvatarGroup: false,
+  groupParent: {
+    direction: "row",
+    spacing: 2,
+  },
   avatars: [
     {
       alt: "user avatar 1",
       src: "https://img.freepik.com/free-psd/3d-illustration-human-avatar-profile_23-2150671126.jpg",
-      sizes: { width: "40px", height: "40px" },
-      sx: { border: "1px solid white" },
+      sx: { width: "40px", height: "40px" },
     },
     {
-      alt: "user avatar 2",
+      alt: "user avatar 1",
       src: "https://img.freepik.com/free-psd/3d-illustration-human-avatar-profile_23-2150671126.jpg",
-      sizes: { width: "50px", height: "50px" },
-      sx: { border: "1px solid white" },
+      sx: { width: "40px", height: "40px" },
     },
     {
-      alt: "user avatar 3",
+      alt: "user avatar 1",
       src: "https://img.freepik.com/free-psd/3d-illustration-human-avatar-profile_23-2150671126.jpg",
-      sizes: { width: "60px", height: "60px" },
-      sx: { border: "1px solid white" },
+      sx: { width: "40px", height: "40px" },
+    },
+    {
+      alt: "user avatar 1",
+      src: "https://img.freepik.com/free-psd/3d-illustration-human-avatar-profile_23-2150671126.jpg",
+      sx: { width: "40px", height: "40px" },
     },
   ],
 };
 
 export const LetterAvatars = Template.bind({});
 LetterAvatars.args = {
-  direction: "row",
-  spacing: 4,
+  groupParent: {
+    direction: "row",
+    spacing: 2,
+  },
   avatars: [
     {
-      alt: "user avatar 1",
-      children: "DG",
-      sizes: { width: "40px", height: "40px" },
-      sx: { border: "1px solid white" },
+      sx: { width: "40px", height: "40px", bgcolor: "primary.main" },
+      children: "A",
     },
     {
-      alt: "user avatar 2",
-      children: "XX",
-      sizes: { width: "50px", height: "50px" },
-      sx: { border: "1px solid white" },
+      sx: { width: "40px", height: "40px", bgcolor: "secondary.main" },
+      children: "B",
     },
     {
-      alt: "user avatar 3",
-      children: "YY",
-      sizes: { width: "60px", height: "60px" },
-      sx: { border: "1px solid white" },
+      sx: { width: "40px", height: "40px", bgcolor: "success.main" },
+      children: "CD",
+    },
+    {
+      sx: { width: "40px", height: "40px", bgcolor: "warning.main" },
+      children: "EF",
     },
   ],
 };
 
 export const SizesAvatars = Template.bind({});
 SizesAvatars.args = {
-  direction: "row",
-  spacing: 4,
+  groupParent: {
+    direction: "row",
+    spacing: 2,
+  },
   avatars: [
     {
       alt: "user avatar 1",
-      children: "DGG",
-      sizes: { width: "40px", height: "40px" },
-      sx: { border: "1px solid white" },
+      src: "https://img.freepik.com/free-psd/3d-illustration-human-avatar-profile_23-2150671126.jpg",
+      sx: { width: "40px", height: "40px" },
     },
     {
-      alt: "user avatar 2",
-      children: "XB",
-      sizes: { width: "64px", height: "64px" },
-      sx: { border: "1px solid white" },
+      alt: "user avatar 1",
+      src: "https://img.freepik.com/free-psd/3d-illustration-human-avatar-profile_23-2150671126.jpg",
+      sx: { width: "60px", height: "60px" },
     },
     {
-      alt: "user avatar 3",
-      children: "YY",
-      sizes: { width: "96px", height: "96px" },
-      sx: { border: "1px solid white" },
+      alt: "user avatar 1",
+      src: "https://img.freepik.com/free-psd/3d-illustration-human-avatar-profile_23-2150671126.jpg",
+      sx: { width: "80px", height: "80px" },
+    },
+    {
+      alt: "user avatar 1",
+      src: "https://img.freepik.com/free-psd/3d-illustration-human-avatar-profile_23-2150671126.jpg",
+      sx: { width: "100px", height: "100px" },
     },
   ],
 };
 
 export const IconAvatars = Template.bind({});
 IconAvatars.args = {
-  direction: "row",
-  spacing: 4,
+  groupParent: {
+    direction: "row",
+    spacing: 2,
+  },
   avatars: [
     {
-      alt: "icon avatar 1",
-      children: <PageviewIcon />,
-      sizes: { width: "40px", height: "40px" },
-      sx: { border: "1px solid white" },
+      sx: { width: "40px", height: "40px", bgcolor: "primary.main" },
+      children: (
+        <Icon
+          name="User"
+          size={24}
+          iconStyle={"BoldDuotone"}
+          color={"inherit"}
+        />
+      ),
     },
     {
-      alt: "icon avatar 2",
-      children: <Person3SharpIcon />,
-      sizes: { width: "50px", height: "50px" },
-      sx: { border: "1px solid white" },
+      sx: { width: "40px", height: "40px", bgcolor: "secondary.main" },
+      children: (
+        <Icon
+          name="Stars"
+          size={24}
+          iconStyle={"BoldDuotone"}
+          color={"inherit"}
+        />
+      ),
     },
     {
-      alt: "icon avatar 3",
-      children: <AccountCircleSharpIcon />,
-      sizes: { width: "60px", height: "60px" },
-      sx: { border: "1px solid white" },
+      sx: { width: "40px", height: "40px", bgcolor: "success.main" },
+      children: (
+        <Icon
+          name="UserCheck"
+          size={24}
+          iconStyle={"BoldDuotone"}
+          color={"inherit"}
+        />
+      ),
     },
   ],
 };
 
-export const VariantAvatars = Template.bind({});
-VariantAvatars.args = {
-  direction: "row",
-  spacing: 4,
+export const VariantsAvatars = Template.bind({});
+VariantsAvatars.args = {
+  groupParent: {
+    direction: "row",
+    spacing: 2,
+  },
   avatars: [
     {
-      alt: "rounded avatar 1",
+      sx: { width: "40px", height: "40px", bgcolor: "primary.main" },
       children: "A",
       variant: "rounded",
-      sizes: { width: "40px", height: "40px" },
-      sx: { border: "1px solid white" },
     },
     {
-      alt: "rounded avatar 2",
+      sx: { width: "40px", height: "40px", bgcolor: "secondary.main" },
       children: "B",
       variant: "circle",
-      sizes: { width: "50px", height: "50px" },
-      sx: { border: "1px solid white" },
     },
     {
-      alt: "rounded avatar 3",
+      sx: { width: "40px", height: "40px", bgcolor: "success.main" },
       children: "C",
-      variant: "rounded",
-      sizes: { width: "60px", height: "60px" },
-      sx: { border: "1px solid white" },
+      variant: "square",
     },
   ],
 };
 
-export const GroupAvatarsMax = Template.bind({});
-GroupAvatarsMax.args = {
-  direction: "row",
+export const GroupAvatars = Template.bind({});
+GroupAvatars.args = {
   useAvatarGroup: true,
-  max: 2,
+  groupParent: {
+    direction: "row",
+    spacing: 2,
+    max: 2,
+  },
   avatars: [
     {
-      alt: "rounded avatar 1",
-      children: "A",
-      variant: "circle",
-      sizes: { width: "40px", height: "40px" },
-      sx: { border: "1px solid white" },
+      alt: "user avatar 1",
+      src: "https://img.freepik.com/free-psd/3d-illustration-human-avatar-profile_23-2150671126.jpg",
+      sx: { width: "40px", height: "40px" },
     },
     {
-      alt: "circle avatar 2",
-      children: "B",
-      variant: "circle",
-      sizes: { width: "40px", height: "40px" },
-      sx: { border: "1px solid white" },
+      alt: "user avatar 1",
+      src: "https://img.freepik.com/free-psd/3d-illustration-human-avatar-profile_23-2150671126.jpg",
+      sx: { width: "40px", height: "40px" },
     },
     {
-      alt: "circle avatar 3",
-      children: "C",
-      variant: "circle",
-      sizes: { width: "40px", height: "40px" },
-      sx: { border: "1px solid white" },
+      alt: "user avatar 1",
+      src: "https://img.freepik.com/free-psd/3d-illustration-human-avatar-profile_23-2150671126.jpg",
+      sx: { width: "40px", height: "40px" },
     },
     {
-      alt: "circle avatar 2",
-      children: "B",
-      variant: "circle",
-      sizes: { width: "40px", height: "40px" },
-      sx: { border: "1px solid white" },
-    },
-    {
-      alt: "circle avatar 2",
-      children: "B",
-      variant: "circle",
-      sizes: { width: "40px", height: "40px" },
-      sx: { border: "1px solid white" },
+      alt: "user avatar 1",
+      src: "https://img.freepik.com/free-psd/3d-illustration-human-avatar-profile_23-2150671126.jpg",
+      sx: { width: "40px", height: "40px" },
     },
   ],
 };
 
-export const GroupAvatarsTotal = Template.bind({});
-GroupAvatarsTotal.args = {
-  direction: "row",
+export const GroupTotalAvatars = Template.bind({});
+GroupTotalAvatars.args = {
   useAvatarGroup: true,
-  total: 20,
+  groupParent: {
+    total: 20,
+  },
   avatars: [
     {
-      alt: "rounded avatar 1",
-      children: "A",
-      variant: "circle",
-      sizes: { width: "40px", height: "40px" },
-      sx: { border: "1px solid white" },
+      alt: "user avatar 1",
+      src: "https://img.freepik.com/free-psd/3d-illustration-human-avatar-profile_23-2150671126.jpg",
+      sx: { width: "40px", height: "40px" },
     },
     {
-      alt: "circle avatar 2",
-      children: "B",
-      variant: "circle",
-      sizes: { width: "40px", height: "40px" },
-      sx: { border: "1px solid white" },
+      alt: "user avatar 1",
+      src: "https://img.freepik.com/free-psd/3d-illustration-human-avatar-profile_23-2150671126.jpg",
+      sx: { width: "40px", height: "40px" },
     },
     {
-      alt: "circle avatar 3",
-      children: "C",
-      variant: "circle",
-      sizes: { width: "40px", height: "40px" },
-      sx: { border: "1px solid white" },
+      alt: "user avatar 1",
+      src: "https://img.freepik.com/free-psd/3d-illustration-human-avatar-profile_23-2150671126.jpg",
+      sx: { width: "40px", height: "40px" },
     },
     {
-      alt: "circle avatar 2",
-      children: "B",
-      variant: "circle",
-      sizes: { width: "40px", height: "40px" },
-      sx: { border: "1px solid white" },
-    },
-    {
-      alt: "circle avatar 2",
-      children: "B",
-      variant: "circle",
-      sizes: { width: "40px", height: "40px" },
-      sx: { border: "1px solid white" },
+      alt: "user avatar 1",
+      src: "https://img.freepik.com/free-psd/3d-illustration-human-avatar-profile_23-2150671126.jpg",
+      sx: { width: "40px", height: "40px" },
     },
   ],
 };
 
-export const BadgeAvatar = Template.bind({});
-BadgeAvatar.args = {
-  direction: "row",
-  useBadge: true,
+export const BadgeAvatars = Template.bind({});
+BadgeAvatars.args = {
+  useAvatarGroup: false,
+  groupParent: {
+    direction: "row",
+    spacing: 2,
+  },
   avatars: [
     {
-      alt: "rounded avatar 1",
-      children: "A",
+      usebadge: true,
       badgeVariant: "dot",
-      color: "secondary",
-      useBadge: true,
-      anchorOrigin: {
-        vertical: "bottom",
-        horizontal: "right",
-      },
-      overlap: "circular",
       badgeContent: " ",
-      sizes: { width: "40px", height: "40px" },
-      sx: { border: "1px solid white" },
-    },
-    {
-      alt: "rounded avatar 1",
-      children: "A",
-      badgeVariant: "dot",
       color: "primary",
-      useBadge: true,
       anchorOrigin: {
         vertical: "bottom",
         horizontal: "right",
       },
       overlap: "circular",
-      badgeContent: " ",
+
       sizes: { width: "40px", height: "40px" },
-      sx: { border: "1px solid white" },
+      alt: "user avatar 1",
+      src: "https://img.freepik.com/free-psd/3d-illustration-human-avatar-profile_23-2150671126.jpg",
+      sx: { width: "40px", height: "40px" },
     },
     {
-      alt: "rounded avatar 1",
-      children: "A",
+      usebadge: true,
       badgeVariant: "dot",
-      color: "error",
-      useBadge: true,
+      badgeContent: " ",
+      color: "secondary",
       anchorOrigin: {
         vertical: "bottom",
         horizontal: "right",
       },
       overlap: "circular",
-      badgeContent: " ",
+
       sizes: { width: "40px", height: "40px" },
-      sx: { border: "1px solid white" },
+      alt: "user avatar 1",
+      src: "https://img.freepik.com/free-psd/3d-illustration-human-avatar-profile_23-2150671126.jpg",
+      sx: { width: "40px", height: "40px" },
+    },
+    {
+      usebadge: true,
+      badgeVariant: "dot",
+      badgeContent: " ",
+      color: "success",
+      anchorOrigin: {
+        vertical: "bottom",
+        horizontal: "right",
+      },
+      overlap: "circular",
+
+      sizes: { width: "40px", height: "40px" },
+      alt: "user avatar 1",
+      src: "https://img.freepik.com/free-psd/3d-illustration-human-avatar-profile_23-2150671126.jpg",
+      sx: { width: "40px", height: "40px" },
+    },
+    {
+      usebadge: true,
+      badgeVariant: "dot",
+      badgeContent: " ",
+      color: "warning",
+      anchorOrigin: {
+        vertical: "bottom",
+        horizontal: "right",
+      },
+      overlap: "circular",
+
+      sizes: { width: "40px", height: "40px" },
+      alt: "user avatar 1",
+      src: "https://img.freepik.com/free-psd/3d-illustration-human-avatar-profile_23-2150671126.jpg",
+      sx: { width: "40px", height: "40px" },
+    },
+    {
+      usebadge: true,
+      badgeVariant: "dot",
+      badgeContent: " ",
+      color: "error",
+      anchorOrigin: {
+        vertical: "bottom",
+        horizontal: "right",
+      },
+      overlap: "circular",
+
+      sizes: { width: "40px", height: "40px" },
+      alt: "user avatar 1",
+      src: "https://img.freepik.com/free-psd/3d-illustration-human-avatar-profile_23-2150671126.jpg",
+      sx: { width: "40px", height: "40px" },
     },
   ],
 };

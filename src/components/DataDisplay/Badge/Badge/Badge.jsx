@@ -1,7 +1,7 @@
 import React from "react";
-import Badge from "@mui/material/Badge";
+import { Badge as MUIBadge } from "@mui/material";
 
-function NMSBadge({
+function Badge({
   children,
   color,
   badgeVariant,
@@ -13,7 +13,7 @@ function NMSBadge({
   ...props
 }) {
   return (
-    <Badge
+    <MUIBadge
       color={color}
       variant={badgeVariant}
       overlap={overlap}
@@ -23,8 +23,8 @@ function NMSBadge({
       {...props}
     >
       {children}
-    </Badge>
+    </MUIBadge>
   );
 }
 
-export default NMSBadge;
+export default Badge;

@@ -1,10 +1,11 @@
-import { DialogContentText as NMSDialogContentText } from "@mui/material";
+import React from "react";
+import { DialogContentText as MUIDialogContentText } from "@mui/material";
 
 const DialogContentText = ({ children, sx, ...props }) => {
   return (
-    <NMSDialogContentText sx={sx} {...props}>
+    <MUIDialogContentText sx={sx} {...props}>
       {children}
-    </NMSDialogContentText>
+    </MUIDialogContentText>
   );
 };
 export default DialogContentText;

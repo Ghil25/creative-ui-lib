@@ -1,5 +1,5 @@
 import React from "react";
-import { ListItemButton as NMSListItemButton } from "@mui/material";
+import { ListItemButton as MUIListItemButton } from "@mui/material";
 import PropTypes from "prop-types";
 
 const ListItemButton = ({
@@ -17,7 +17,7 @@ const ListItemButton = ({
   ...props
 }) => {
   return (
-    <NMSListItemButton
+    <MUIListItemButton
       alignItems={alignItems}
       autoFocus={autoFocus}
       children={children}
@@ -32,7 +32,7 @@ const ListItemButton = ({
       {...props}
     >
       {children}
-    </NMSListItemButton>
+    </MUIListItemButton>
   );
 };
 
@@ -48,7 +48,6 @@ ListItemButton.propTypes = {
     PropTypes.object,
     PropTypes.bool,
   ]),
-  ...NMSListItemButton.PropTypes,
 };
 
 // ListItemButton.defaultProps = {

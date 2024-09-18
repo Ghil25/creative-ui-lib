@@ -13,11 +13,12 @@ import Checkbox from "@mui/material/Checkbox";
 import Switch from "@mui/material/Switch";
 
 // import Switch from "../../../Input/Switch/Switch";
-import { NMSAvatar } from "../../Avatar";
+import { Avatar } from "../../Avatar";
+
 import ThemeProvider from "../../../../ThemeProvider";
 import Typography from "@mui/material/Typography";
 export default {
-  title: "SAMPLE/DataDisplay/Listsample",
+  title: "Components/DataDisplay/List",
   component: List,
 };
 
@@ -114,9 +115,7 @@ const Folder = ({
     <List {...list}>
       <ListItem {...listItems}>
         <ListItemAvatar {...listItemAvatar}>
-          <NMSAvatar {...Avatar}>
-            <Icon {...icon} />
-          </NMSAvatar>
+          <Icon {...icon} />
         </ListItemAvatar>
         <ListItemText {...listItemText} />
       </ListItem>
@@ -171,7 +170,7 @@ const AlignListItem = ({
       <List {...list}>
         <ListItem {...listItems}>
           <ListItemAvatar {...listItemAvatar}>
-            <NMSAvatar {...avatar} />
+            <Avatar {...avatar} />
           </ListItemAvatar>
           <ListItemText
             primary={listItemText.primary}
@@ -181,7 +180,7 @@ const AlignListItem = ({
         <Divider {...divider} />
         <ListItem {...listItems}>
           <ListItemAvatar {...listItemAvatar}>
-            <NMSAvatar {...avatar} />
+            <Avatar {...avatar} />
           </ListItemAvatar>
           <ListItemText
             primary={listItemText.primary}
@@ -191,7 +190,7 @@ const AlignListItem = ({
         <Divider {...divider} />
         <ListItem {...listItems}>
           <ListItemAvatar {...listItemAvatar}>
-            <NMSAvatar {...avatar} />
+            <Avatar {...avatar} />
           </ListItemAvatar>
           <ListItemText
             primary={listItemText.primary}
@@ -249,32 +248,6 @@ const GutterListItem = ({
 };
 
 const StickyListItem = ({ list, listSubheader, listText, listItem }) => {
-  //   return  <List
-  //   sx={{
-  //     width: '100%',
-  //     maxWidth: 360,
-  //     bgcolor: 'background.paper',
-  //     position: 'relative',
-  //     overflow: 'auto',
-  //     maxHeight: 300,
-  //     '& ul': { padding: 0 },
-  //   }}
-  //   subheader={<li />}
-  // >
-  //   {[0, 1, 2, 3, 4].map((sectionId) => (
-  //     <li key={`section-${sectionId}`}>
-  //       <ul>
-  //         <ListSubheader>{`I'm sticky ${sectionId}`}</ListSubheader>
-  //         {[0, 1, 2].map((item) => (
-  //           <ListItem key={`item-${sectionId}-${item}`}>
-  //             <ListItemText primary={`Item ${item}`} />
-  //           </ListItem>
-  //         ))}
-  //       </ul>
-  //     </li>
-  //   ))}
-  // </List>
-
   return (
     <List {...list}>
       {[0, 1, 2, 3, 4].map((sectionId) => (
@@ -377,14 +350,14 @@ FolderList.args = {
     maxWidth: "100%",
     sx: {
       width: "100%",
-      maxWidth: 360,
+      // maxWidth: 360,
       bgcolor: "background.paper",
     },
   },
   listItems: {
     disablePadding: true,
   },
-  listItemButton: {},
+
   listItemText: {
     primary: "Primary Inbox",
     secondary: "june 25, 2024",

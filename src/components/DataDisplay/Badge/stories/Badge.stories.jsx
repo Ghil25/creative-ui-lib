@@ -1,39 +1,38 @@
 import React from "react";
 
-import { StyledBadge, NMSBadge } from "../../Badge";
-import { NMSAvatar, NMSStack } from "../../Avatar";
+import { StyledBadge, Badge } from "../../Badge";
+import { Avatar, Stack } from "../../Avatar";
 import Icon from "../../../Foundation/Icons/Icon";
-import Typography from "../../../Typography";
 
 export default {
-  title: "SAMPLE/DataDisplay/Badge",
-  component: NMSBadge,
+  title: "Components/DataDisplay/Badge",
+  component: Badge,
 };
 
 const Template = ({ badges, stack, icon }) => (
-  <NMSStack {...stack}>
+  <Stack {...stack}>
     {badges.map((badge, index) => {
       const { icon, ...badges } = badge;
       return (
-        <NMSBadge key={index} {...badges}>
+        <Badge key={index} {...badges}>
           <Icon {...icon} />
-        </NMSBadge>
+        </Badge>
       );
     })}
-  </NMSStack>
+  </Stack>
 );
 
 const Statusbadge = ({ badges, stack, icon }) => (
-  <NMSStack {...stack}>
+  <Stack {...stack}>
     {badges.map((badge, index) => {
       const { avatar, ...badges } = badge;
       return (
         <StyledBadge key={index} {...badges}>
-          <NMSAvatar {...avatar} />
+          <Avatar {...avatar} />
         </StyledBadge>
       );
     })}
-  </NMSStack>
+  </Stack>
 );
 
 export const BasicBadge = Template.bind({});

@@ -1,12 +1,12 @@
 import React from "react";
-import { ListSubheader as NMSListSubheader } from "@mui/material";
+import { ListSubheader as MUIListSubheader } from "@mui/material";
 import PropTypes from "prop-types";
 
 const ListSubheader = ({ children, color, component, sx, ...props }) => {
   return (
-    <NMSListSubheader color={color} component={component} sx={sx} {...props}>
+    <MUIListSubheader color={color} component={component} sx={sx} {...props}>
       {children}
-    </NMSListSubheader>
+    </MUIListSubheader>
   );
 };
 
@@ -22,7 +22,7 @@ ListSubheader.propTypes = {
     PropTypes.object,
     PropTypes.bool,
   ]),
-  ...NMSListSubheader.PropTypes,
+  ...ListSubheader.PropTypes,
 };
 
 ListSubheader.defaultProps = {

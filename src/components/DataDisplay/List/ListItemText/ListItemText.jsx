@@ -1,5 +1,5 @@
 import React from "react";
-import { ListItemText as NMSListItemText } from "@mui/material";
+import { ListItemText as MUIListItemText } from "@mui/material";
 import PropTypes from "prop-types";
 
 const ListItemText = ({
@@ -13,7 +13,7 @@ const ListItemText = ({
   ...props
 }) => {
   return (
-    <NMSListItemText
+    <MUIListItemText
       disableTypography={disableTypography}
       inset={inset}
       primary={primary}
@@ -40,7 +40,6 @@ ListItemText.propTypes = {
     PropTypes.object,
     PropTypes.bool,
   ]),
-  ...NMSListItemText.PropTypes,
 };
 
 // ListItemText.defaultProps = {

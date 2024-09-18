@@ -1,20 +1,20 @@
 import React from "react";
-import { NMSChip } from "../../Chip";
+import { Chip } from "../../Chip";
 
-import { NMSAvatar, NMSStack } from "../../Avatar";
+import { Avatar, Stack } from "../../Avatar";
 import Icon from "../../../Foundation/Icons/Icon";
 
 export default {
-  title: "SAMPLE/DataDisplay/Chip",
-  component: NMSChip,
+  title: "Components/DataDisplay/Chip",
+  component: Chip,
 };
 
 const Template = ({ chips, stack }) => (
-  <NMSStack {...stack}>
+  <Stack {...stack}>
     {chips.map((chip, index) => (
-      <NMSChip key={index} {...chip} />
+      <Chip key={index} {...chip} />
     ))}
-  </NMSStack>
+  </Stack>
 );
 
 export const BasicChips = Template.bind({});
@@ -136,7 +136,7 @@ AvatarChips.args = {
       color: "primary",
 
       clickable: true,
-      avatar: <NMSAvatar alt="DG" src="sss" />,
+      avatar: <Avatar alt="DG" src="sss" />,
     },
     {
       label: "chip outlined",
@@ -145,7 +145,7 @@ AvatarChips.args = {
 
       clickable: true,
       avatar: (
-        <NMSAvatar
+        <Avatar
           alt="DG"
           src="https://media.istockphoto.com/id/147694372/photo/badger-dog.jpg?s=612x612&w=0&k=20&c=3iNYkarzevpIJeHcmQAykq0cubiSlL4URl91qIlacxM="
         />

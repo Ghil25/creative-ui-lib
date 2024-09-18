@@ -1,8 +1,8 @@
 import React from "react";
-import Chip from "@mui/material/Chip";
+import { Chip as MUIChip } from "@mui/material";
 import ThemeProvider from "../../../../ThemeProvider";
 
-function NMSChip({
+function Chip({
   label,
   variant,
   disabled,
@@ -19,7 +19,7 @@ function NMSChip({
 }) {
   return (
     <ThemeProvider>
-      <Chip
+      <MUIChip
         {...props}
         label={label}
         variant={variant}
@@ -38,4 +38,4 @@ function NMSChip({
   );
 }
 
-export default NMSChip;
+export default Chip;

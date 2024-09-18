@@ -1,10 +1,11 @@
-import { DialogActions as NMSDialogActions } from "@mui/material";
+import React from "react";
+import { DialogActions as MUIDialogActions } from "@mui/material";
 
 const DialogActions = ({ children, disableSpacing, sx, ...props }) => {
   return (
-    <NMSDialogActions disableSpacing={disableSpacing} sx={sx} {...props}>
+    <MUIDialogActions disableSpacing={disableSpacing} sx={sx} {...props}>
       {children}
-    </NMSDialogActions>
+    </MUIDialogActions>
   );
 };
 

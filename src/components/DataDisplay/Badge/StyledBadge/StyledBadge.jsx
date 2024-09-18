@@ -1,5 +1,5 @@
 import React from "react";
-import NMSBadge from "../Badge";
+import Badge from "../Badge";
 import { styled } from "@mui/material/styles";
 
 function StyledBadge({
@@ -13,7 +13,7 @@ function StyledBadge({
   sx,
   ...props
 }) {
-  const StyledBadge = styled(NMSBadge)(({ theme }) => ({
+  const StyledBadge = styled(Badge)(({ theme }) => ({
     "& .MuiBadge-badge": {
       backgroundColor: { color },
       color: { color },

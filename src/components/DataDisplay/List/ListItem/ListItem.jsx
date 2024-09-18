@@ -1,5 +1,5 @@
 import React from "react";
-import { ListItem as NMSListItem } from "@mui/material";
+import { ListItem as MUIListItem } from "@mui/material";
 import PropTypes from "prop-types";
 
 const ListItem = ({
@@ -21,7 +21,7 @@ const ListItem = ({
   ...props
 }) => {
   return (
-    <NMSListItem
+    <MUIListItem
       alignItems={alignItems}
       children={children}
       classes={classes}
@@ -37,7 +37,7 @@ const ListItem = ({
       {...props}
     >
       {children}
-    </NMSListItem>
+    </MUIListItem>
   );
 };
 
@@ -54,7 +54,7 @@ ListItem.propTypes = {
     PropTypes.object,
     PropTypes.bool,
   ]),
-  ...NMSListItem.PropTypes,
+  ...ListItem.PropTypes,
 };
 
 // ListItem.defaultProps = {

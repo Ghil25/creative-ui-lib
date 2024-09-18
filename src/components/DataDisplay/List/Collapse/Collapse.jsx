@@ -1,5 +1,5 @@
 import React from "react";
-import { Collapse as NMSCollapse } from "@mui/material";
+import { Collapse as MUICollapse } from "@mui/material";
 
 const Collapse = ({
   addEndListener,
@@ -13,7 +13,7 @@ const Collapse = ({
   ...props
 }) => {
   return (
-    <NMSCollapse
+    <MUICollapse
       addEndListener={addEndListener}
       collapsedSize={collapsedSize}
       component={component}
@@ -24,7 +24,7 @@ const Collapse = ({
       {...props}
     >
       {children}
-    </NMSCollapse>
+    </MUICollapse>
   );
 };
 

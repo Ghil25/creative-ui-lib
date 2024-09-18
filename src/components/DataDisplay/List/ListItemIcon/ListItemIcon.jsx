@@ -1,12 +1,12 @@
 import React from "react";
-import { ListItemIcon as NMSListItemIcon } from "@mui/material";
+import { ListItemIcon as MUIListItemIcon } from "@mui/material";
 import PropTypes from "prop-types";
 
 const ListItemIcon = ({ children, sx, ...props }) => {
   return (
-    <NMSListItemIcon sx={sx} {...props}>
+    <MUIListItemIcon sx={sx} {...props}>
       {children}
-    </NMSListItemIcon>
+    </MUIListItemIcon>
   );
 };
 
@@ -20,7 +20,6 @@ ListItemIcon.propTypes = {
     PropTypes.object,
     PropTypes.bool,
   ]),
-  ...NMSListItemIcon.PropTypes,
 };
 
 // ListItemIcon.defaultProps = {

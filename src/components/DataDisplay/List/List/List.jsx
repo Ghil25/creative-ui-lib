@@ -1,5 +1,5 @@
 import React from "react";
-import { List as NMSList } from "@mui/material";
+import { List as MUIList } from "@mui/material";
 import PropTypes from "prop-types";
 
 const List = ({
@@ -13,7 +13,7 @@ const List = ({
   ...props
 }) => {
   return (
-    <NMSList
+    <MUIList
       component={component}
       classes={classes}
       dense={dense}
@@ -23,7 +23,7 @@ const List = ({
       {...props}
     >
       {children}
-    </NMSList>
+    </MUIList>
   );
 };
 

@@ -1,9 +1,10 @@
+import React from "react";
 import { Dialog as MUIDialog } from "@mui/material";
 
 const Dialog = ({
   open,
-  ariaDescibedby,
-  arialLabelledby,
+  ariaDescribedby,
+  ariaLabelledby,
 
   children,
   disableEscapeKeyDown,
@@ -11,7 +12,6 @@ const Dialog = ({
   fullWidth,
   maxWidth,
   onClose,
-  onEscapeKeyDown,
   PaperProps,
   scroll,
   TransitionComponent,
@@ -21,14 +21,13 @@ const Dialog = ({
   return (
     <MUIDialog
       open={open}
-      ariaDescibedby={ariaDescibedby}
-      arialLabelledby={arialLabelledby}
+      aria-describedby={ariaDescribedby}
+      aria-labelledby={ariaLabelledby}
       disableEscapeKeyDown={disableEscapeKeyDown}
       fullScreen={fullScreen}
       fullWidth={fullWidth}
       maxWidth={maxWidth}
       onClose={onClose}
-      onEscapeKeyDown={onEscapeKeyDown}
       PaperProps={PaperProps}
       scroll={scroll}
       TransitionComponent={TransitionComponent}

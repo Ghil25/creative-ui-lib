@@ -1,12 +1,12 @@
 import React from "react";
-import { ListItemAvatar as NMSListItemAvatar } from "@mui/material";
+import { ListItemAvatar as MUIListItemAvatar } from "@mui/material";
 import PropTypes from "prop-types";
 
 const ListItemAvatar = ({ children, sx, ...props }) => {
   return (
-    <NMSListItemAvatar sx={sx} {...props}>
+    <MUIListItemAvatar sx={sx} {...props}>
       {children}
-    </NMSListItemAvatar>
+    </MUIListItemAvatar>
   );
 };
 
@@ -20,7 +20,7 @@ ListItemAvatar.propTypes = {
     PropTypes.object,
     PropTypes.bool,
   ]),
-  ...NMSListItemAvatar.PropTypes,
+  ...ListItemAvatar.PropTypes,
 };
 
 // ListItemAvatar.default = {

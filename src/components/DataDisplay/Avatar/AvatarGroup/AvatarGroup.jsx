@@ -1,12 +1,12 @@
 import React from "react";
-import AvatarGroup from "@mui/material/AvatarGroup";
+import { AvatarGroup as MUIAvatarGroup } from "@mui/material";
 
-function NMSAvatarGroup({ max, total, sx, children }) {
+function AvatarGroup({ max, total, sx, children }) {
   return (
-    <AvatarGroup max={max} total={total} sx={{ ...sx }}>
+    <MUIAvatarGroup max={max} total={total} sx={{ ...sx }}>
       {children}
-    </AvatarGroup>
+    </MUIAvatarGroup>
   );
 }
 
-export default NMSAvatarGroup;
+export default AvatarGroup;

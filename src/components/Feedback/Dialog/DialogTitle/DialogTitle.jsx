@@ -1,10 +1,11 @@
-import { DialogTitle as NMSDialogTitle } from "@mui/material";
+import React from "react";
+import { DialogTitle as MUIDialogTitle } from "@mui/material";
 
 const DialogTitle = ({ children, sx, ...props }) => {
   return (
-    <NMSDialogTitle sx={sx} {...props}>
+    <MUIDialogTitle sx={sx} {...props}>
       {children}
-    </NMSDialogTitle>
+    </MUIDialogTitle>
   );
 };
 

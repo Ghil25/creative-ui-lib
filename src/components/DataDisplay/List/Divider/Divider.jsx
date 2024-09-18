@@ -1,12 +1,12 @@
 import React from "react";
-import Divider from "@mui/material/Divider";
+import { Divider as MUIDivider } from "@mui/material";
 
-const ListDivider = ({ sx, children, TextAlign, ...props }) => {
+const Divider = ({ sx, children, TextAlign, ...props }) => {
   return (
-    <Divider sx={sx} TextAlign={TextAlign} {...props}>
+    <MUIDivider sx={sx} TextAlign={TextAlign} {...props}>
       {children}
-    </Divider>
+    </MUIDivider>
   );
 };
 
-export default ListDivider;
+export default Divider;

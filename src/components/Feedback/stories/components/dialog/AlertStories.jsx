@@ -30,10 +30,11 @@ const Alert = ({
 
   return (
     <>
-      <Button {...button1} onClick={handleClickOpen}></Button>
+      <Button {...button1} onClick={handleClickOpen}>
+        Open Allert
+      </Button>
       <Dialog {...dialog} open={open} onClose={handleClose}>
         <DialogTitle {...dialogTitle}>
-          {" "}
           Use Google's location service?
         </DialogTitle>
         <DialogContent {...dialogContent}>

@@ -43,7 +43,7 @@ const FormDialog = ({
           </DialogContentText>
           <TextField {...textField} />
         </DialogContent>
-        <DialogActions>
+        <DialogActions {...dialogActions}>
           <Button onClick={handleClose} {...button2}>
             Cancel
           </Button>

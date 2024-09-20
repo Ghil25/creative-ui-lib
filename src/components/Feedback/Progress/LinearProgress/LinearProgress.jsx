@@ -1,4 +1,4 @@
-import { LinearProgress as MuiLinearProgress } from "@mui/material";
+import { LinearProgress as MUILinearProgress } from "@mui/material";
 import React from "react";
 
 const LinearProgress = ({
@@ -11,7 +11,7 @@ const LinearProgress = ({
   ...props
 }) => {
   return (
-    <LinearProgress
+    <MUILinearProgress
       classes={classes}
       color={color}
       sx={sx}

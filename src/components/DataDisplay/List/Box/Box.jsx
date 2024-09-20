@@ -1,14 +1,14 @@
-// import React from "react";
-// import { Box as MUIBox } from "@mui/material";
+import React from "react";
+import { Box as MUIBox } from "@mui/material";
 // import PropTypes from "prop-types";
 
-// const Box = ({ children, component, sx, ...props }) => {
-//   return (
-//     <MUIBox component={component} sx={sx} {...props}>
-//       {children}
-//     </MUIBox>
-//   );
-// };
+const Box = ({ children, component, sx, ...props }) => {
+  return (
+    <MUIBox component={component} sx={sx} {...props}>
+      {children}
+    </MUIBox>
+  );
+};
 
 // Box.propTypes = {
 //   children: PropTypes.node,
@@ -24,4 +24,4 @@
 //   ...Box.propTypes,
 // };
 
-// export default Box;
+export default Box;

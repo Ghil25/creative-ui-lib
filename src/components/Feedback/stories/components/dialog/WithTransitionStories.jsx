@@ -1,14 +1,21 @@
+// import {
+//   Dialog,
+//   DialogActions,
+//   DialogContent,
+//   DialogContentText,
+//   DialogTitle,
+//   Slide,
+// } from "../../../Dialog";
+// import { Button } from "../../../../Input";
 import React, { useState, forwardRef } from "react";
-import {
-  Dialog,
-  DialogActions,
-  DialogContent,
-  DialogContentText,
-  DialogTitle,
-  Slide,
-} from "../../../Dialog";
+import Dialog from "../../../Dialog/Dialog/Dialog";
+import DialogActions from "../../../Dialog/DialogActions/DialogActions";
+import DialogContent from "../../../Dialog/DialogContent/DialogContent";
+import DialogContentText from "../../../Dialog/DialogContentText/DialogContentText";
+import DialogTitle from "../../../Dialog/DialogTitle/DialogTitle";
+import Slide from "../../../Dialog/Slide/Slide";
 
-import { Button } from "../../../../Input";
+import Button from "../../../../Input/Button/Button";
 const Transition = forwardRef(function Transition({ slide, ...props }, ref) {
   return <Slide {...props} ref={ref} {...slide} />;
 });
@@ -21,7 +28,6 @@ const WithTransitionDialog = ({
   dialogTitle,
   dialogContent,
   dialogText,
-  dialogActions,
 }) => {
   const [open, setOpen] = useState(false);
 

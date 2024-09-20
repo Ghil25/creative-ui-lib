@@ -1,4 +1,4 @@
-import { Slide as MuiSlide } from "@mui/material";
+import { Slide as MUISlide } from "@mui/material";
 import React from "react";
 
 const Slide = ({
@@ -14,7 +14,7 @@ const Slide = ({
 }) => {
   return (
     <>
-      <MuiSlide
+      <MUISlide
         children={children}
         addEndListener={addEndListener}
         appear={appear}

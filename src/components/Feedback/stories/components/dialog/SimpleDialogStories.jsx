@@ -1,27 +1,31 @@
 import React, { useState } from "react";
-import {
-  Dialog,
-  DialogActions,
-  DialogContent,
-  DialogTitle,
-} from "../../../Dialog";
-import { Avatar } from "../../../../DataDisplay";
-import {
-  List,
-  ListItem,
-  ListItemAvatar,
-  ListItemText,
-  ListItemButton,
-} from "../../../../DataDisplay/List";
+// import { Dialog, DialogTitle } from "../../../Dialog";
+import { Avatar } from "../../../../DataDisplay/Avatar";
+// import {
+//   List,
+//   ListItem,
+//   ListItemAvatar,
+//   ListItemText,
+//   ListItemButton,
+// } from "../../../../DataDisplay/List";
 
 import { Button } from "../../../../Input";
 import Typography from "../../../../Typography/Typography";
 
+// import Button from "../../../../Input/Button/Button";
+// import Typography from "../../../../Typography/Typography";
 import Icon from "../../../../Foundation/Icons/Icon";
-
+import Dialog from "../../../Dialog/Dialog/Dialog";
+import DialogTitle from "../../../Dialog/DialogTitle/DialogTitle";
+// import Avatar from "../../../../DataDisplay/Avatar/Avatar/Avatar";
+import List from "../../../../DataDisplay/List/List/List";
+import ListItem from "../../../../DataDisplay/List/ListItem/ListItem";
+import ListItemButton from "../../../../DataDisplay/List/ListItemButton/ListItemButton";
+import ListItemText from "../../../../DataDisplay/List/ListItemText/ListItemText";
+import ListItemAvatar from "../../../../DataDisplay/List/ListItemAvatar/ListItemAvatar";
 const emails = ["username@gmail.com", "user02@gmail.com"];
 
-function SimpleDialog({
+function SimpleDialogContent({
   dialog,
   dialogtitle,
   list,
@@ -84,9 +88,9 @@ function SimpleDialog({
   );
 }
 
-export default function SimpleDialogDemo({ typography, button, ...props }) {
-  const [open, setOpen] = React.useState(false);
-  const [selectedValue, setSelectedValue] = React.useState(emails[1]);
+function SimpleDialog({ typography, button, ...props }) {
+  const [open, setOpen] = useState(false);
+  const [selectedValue, setSelectedValue] = useState(emails[1]);
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -104,7 +108,7 @@ export default function SimpleDialogDemo({ typography, button, ...props }) {
       <Button {...button} onClick={handleClickOpen}>
         Open simple dialog
       </Button>
-      <SimpleDialog
+      <SimpleDialogContent
         selectedValue={selectedValue}
         open={open}
         onClose={handleClose}
@@ -113,3 +117,5 @@ export default function SimpleDialogDemo({ typography, button, ...props }) {
     </div>
   );
 }
+
+export default SimpleDialog;

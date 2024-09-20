@@ -1,23 +1,45 @@
 import React from "react";
+// import {
+//    AlertStories,
+//    SimpleDialog,
+//  FormDialog,
+//   TransitionDialog,
+//    FullscreenDialog,
+// } from "./components";
 
-import {
-  AlertStories,
-  SimpleDialog,
-  FormDialog,
-  TransitionDialog,
-  FullscreenDialog,
-} from "./components";
+//simpledialog
+//fullscrendialog
 
+import Alert from "../stories/components/dialog/AlertStories";
+import FormDialog from "../stories/components/dialog/FormDialogStories";
+import FullscreenDialog from "../stories/components/dialog/FullscreenDialogStories";
+import SimpleDialog from "../stories/components/dialog/SimpleDialogStories";
+import WithTransitionDialog from "./components/dialog/WithTransitionStories";
 export default {
   title: "Components/Feedback/Dialog",
-  component: AlertStories,
+  component: Alert,
 };
 
 const SimpleDialogDemo = (args) => <SimpleDialog {...args} />;
-const AlertDemo = (args) => <AlertStories {...args} />;
+const AlertDemo = (args) => <Alert {...args} />;
 const FormDialogDemo = (args) => <FormDialog {...args} />;
-const TransitionDemo = (args) => <TransitionDialog {...args} />;
+const TransitionDemo = (args) => <WithTransitionDialog {...args} />;
 const FullscreenDemo = (args) => <FullscreenDialog {...args} />;
+
+export const TransitionDialogs = TransitionDemo.bind({});
+TransitionDialogs.args = {
+  slide: {},
+  button1: {
+    variant: "outlined",
+  },
+  dialog: {
+    keepMounted: true,
+    ariaDescribedby: "alert-dialog-slide-description",
+  },
+  dialogText: {
+    id: "alert-dialog-slide-description",
+  },
+};
 
 export const AlertDialog = AlertDemo.bind({});
 AlertDialog.args = {
@@ -89,23 +111,6 @@ FormDialogs.args = {
   },
   button3: {
     type: "submit",
-  },
-};
-
-export const TransitionDialogs = TransitionDemo.bind({});
-TransitionDialogs.args = {
-  slide: {
-    direction: "up",
-  },
-  button1: {
-    variant: "outlined",
-  },
-  dialog: {
-    keepMounted: true,
-    ariaDescribedby: "alert-dialog-slide-description",
-  },
-  dialogText: {
-    id: "alert-dialog-slide-description",
   },
 };
 

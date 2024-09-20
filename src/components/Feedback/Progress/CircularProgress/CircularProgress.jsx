@@ -13,7 +13,7 @@ const CircularProgress = ({
   ...props
 }) => {
   return (
-    <CircularProgress
+    <MUICircularProgress
       classes={classes}
       color={color}
       disableShrink={disableShrink}

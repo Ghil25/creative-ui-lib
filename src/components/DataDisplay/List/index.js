@@ -7,3 +7,5 @@ export { default as ListItemText } from "./ListItemText";
 export { default as ListSubheader } from "./ListSubheader";
 export { default as Divider } from "./Divider";
 export { default as Box } from "./Box";
+export { default as Collapse } from "./Collapse";
+    

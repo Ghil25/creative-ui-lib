@@ -10,6 +10,7 @@ const ListItemText = ({
   secondary,
   secondaryTypographyProps,
   sx,
+  classes,
   ...props
 }) => {
   return (
@@ -20,6 +21,7 @@ const ListItemText = ({
       primaryTypographyProps={primaryTypographyProps}
       secondary={secondary}
       secondaryTypographyProps={secondaryTypographyProps}
+      classes={classes}
       sx={sx}
       {...props}
     />

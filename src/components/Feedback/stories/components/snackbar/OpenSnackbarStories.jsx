@@ -3,10 +3,10 @@ import Icon from "../../../../Foundation/Icons/Icon";
 import Button from "../../../../Input/Button";
 import Snackbar from "../../../Snackbar/Snackbar";
 import IconButton from "../../../../Input/Button/IconButton/IconButton";
-const OpenSnackbar = ({ ...props }) => {
+const OpenSnackbar = ({ button1, button2, iconbutton, icon, ...props }) => {
   const [open, setOpen] = React.useState(false);
 
-  const handleClick = ({ button1, button2, iconbutton }) => {
+  const handleClick = () => {
     setOpen(true);
   };
 
@@ -23,13 +23,11 @@ const OpenSnackbar = ({ ...props }) => {
       <Button color="secondary" size="small" onClick={handleClose}>
         UNDO
       </Button>
-      <IconButton aria-label="close" onClick={handleClose}>
-        <Icon name="CloseCircle" iconStyle={"BoldDuotone"} size={24} />
+      <IconButton aria-label="close" onClick={handleClose} {...iconbutton}>
+        <Icon {...icon} />
       </IconButton>
     </>
   );
-
-  const { button1, iconButton } = props;
 
   return (
     <div>

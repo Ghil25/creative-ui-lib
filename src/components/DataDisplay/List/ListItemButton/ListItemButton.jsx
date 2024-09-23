@@ -4,6 +4,7 @@ import PropTypes from "prop-types";
 
 const ListItemButton = ({
   alignItems,
+  classes,
   autoFocus,
   children,
   component,
@@ -18,6 +19,7 @@ const ListItemButton = ({
 }) => {
   return (
     <MUIListItemButton
+      classes={classes}
       alignItems={alignItems}
       autoFocus={autoFocus}
       children={children}

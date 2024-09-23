@@ -1,9 +1,9 @@
 import React from "react";
 import { DialogContent as MUIDialogContent } from "@mui/material";
 
-const DialogContent = ({ children, dividers, sx, ...props }) => {
+const DialogContent = ({ children, dividers, classes, sx, ...props }) => {
   return (
-    <MUIDialogContent dividers={dividers} sx={sx} {...props}>
+    <MUIDialogContent dividers={dividers} classes={classes} sx={sx} {...props}>
       {children}
     </MUIDialogContent>
   );

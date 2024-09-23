@@ -2,9 +2,9 @@ import React from "react";
 import { ListItemAvatar as MUIListItemAvatar } from "@mui/material";
 import PropTypes from "prop-types";
 
-const ListItemAvatar = ({ children, sx, ...props }) => {
+const ListItemAvatar = ({ children, sx, classes, ...props }) => {
   return (
-    <MUIListItemAvatar sx={sx} {...props}>
+    <MUIListItemAvatar sx={sx} classes={classes} {...props}>
       {children}
     </MUIListItemAvatar>
   );

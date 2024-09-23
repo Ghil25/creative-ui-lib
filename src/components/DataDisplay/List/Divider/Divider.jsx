@@ -1,9 +1,31 @@
 import React from "react";
 import { Divider as MUIDivider } from "@mui/material";
 
-const Divider = ({ sx, children, TextAlign, ...props }) => {
+const Divider = ({
+  absolute,
+  children,
+  classes,
+  component,
+  flexItem,
+
+  orientation,
+  sx,
+  textAlign,
+  variant,
+  ...props
+}) => {
   return (
-    <MUIDivider sx={sx} TextAlign={TextAlign} {...props}>
+    <MUIDivider
+      absolute={absolute}
+      classes={classes}
+      component={component}
+      sx={sx}
+      variant={variant}
+      flexItem={flexItem}
+      orientation={orientation}
+      textAlign={textAlign}
+      {...props}
+    >
       {children}
     </MUIDivider>
   );

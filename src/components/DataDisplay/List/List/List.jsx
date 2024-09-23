@@ -1,7 +1,7 @@
 import React from "react";
-import PropTypes from "prop-types";
-import { List as MUIList } from "@mui/material";
 
+import { List as MUIList } from "@mui/material";
+import PropTypes from "prop-types";
 const List = ({
   children,
   classes,
@@ -26,7 +26,7 @@ const List = ({
     </MUIList>
   );
 };
-export default List;
+
 List.propTypes = {
   children: PropTypes.node,
   component: PropTypes.elementType,
@@ -42,7 +42,8 @@ List.propTypes = {
   ]),
 };
 
-// List.defaultProps = {
-//   children: "NMS List",
-//   disablePadding: false,
-// };
+List.defaultProps = {
+  children: "NMS List",
+  disablePadding: false,
+};
+export default List;

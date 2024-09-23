@@ -3,6 +3,7 @@ import React from "react";
 
 const Slide = ({
   children,
+  classes,
   addEndListener,
   appear,
   container,
@@ -23,6 +24,7 @@ const Slide = ({
         easing={easing}
         in={isIn}
         timeout={timeout}
+        classes={classes}
         {...props}
       />
     </>

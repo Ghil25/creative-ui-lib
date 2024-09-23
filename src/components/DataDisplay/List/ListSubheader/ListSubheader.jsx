@@ -2,9 +2,22 @@ import React from "react";
 import { ListSubheader as MUIListSubheader } from "@mui/material";
 import PropTypes from "prop-types";
 
-const ListSubheader = ({ children, color, component, sx, ...props }) => {
+const ListSubheader = ({
+  children,
+  color,
+  component,
+  sx,
+  classes,
+  ...props
+}) => {
   return (
-    <MUIListSubheader color={color} component={component} sx={sx} {...props}>
+    <MUIListSubheader
+      color={color}
+      component={component}
+      sx={sx}
+      classes={classes}
+      {...props}
+    >
       {children}
     </MUIListSubheader>
   );

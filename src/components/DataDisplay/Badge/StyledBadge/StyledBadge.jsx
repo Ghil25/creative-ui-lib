@@ -11,6 +11,13 @@ function StyledBadge({
   badgeContent,
   max,
   sx,
+  classes,
+  component,
+  invisible,
+  showZero,
+  slotProps,
+  slot,
+  variant,
   ...props
 }) {
   const StyledBadge = styled(Badge)(({ theme }) => ({
@@ -50,6 +57,13 @@ function StyledBadge({
       anchorOrigin={anchorOrigin}
       badgeContent={badgeContent}
       max={max}
+      sx={sx}
+      classes={classes}
+      component={component}
+      invisible={invisible}
+      showZero={showZero}
+      slotProps={slotProps}
+      slot={slot}
       {...props}
     >
       {children}

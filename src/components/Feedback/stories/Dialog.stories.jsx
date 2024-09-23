@@ -1,15 +1,4 @@
 import React from "react";
-// import {
-//    AlertStories,
-//    SimpleDialog,
-//  FormDialog,
-//   TransitionDialog,
-//    FullscreenDialog,
-// } from "./components";
-
-//simpledialog
-//fullscrendialog
-
 import Alert from "../stories/components/dialog/AlertStories";
 import FormDialog from "../stories/components/dialog/FormDialogStories";
 import FullscreenDialog from "../stories/components/dialog/FullscreenDialogStories";

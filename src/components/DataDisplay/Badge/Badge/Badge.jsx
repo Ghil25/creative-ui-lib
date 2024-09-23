@@ -10,6 +10,13 @@ function Badge({
   badgeContent,
   max,
   sx,
+  classes,
+  component,
+  invisible,
+  showZero,
+  slotProps,
+  slots,
+  variant,
   ...props
 }) {
   return (
@@ -20,6 +27,13 @@ function Badge({
       anchorOrigin={anchorOrigin}
       badgeContent={badgeContent}
       max={max}
+      sx={sx}
+      classes={classes}
+      component={component}
+      invisible={invisible}
+      showZero={showZero}
+      slotProps={slotProps}
+      slots={slots}
       {...props}
     >
       {children}

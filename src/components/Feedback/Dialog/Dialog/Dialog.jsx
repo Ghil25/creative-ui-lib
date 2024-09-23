@@ -5,7 +5,7 @@ const Dialog = ({
   open,
   ariaDescribedby,
   ariaLabelledby,
-
+  classes,
   children,
   disableEscapeKeyDown,
   fullScreen,
@@ -20,6 +20,7 @@ const Dialog = ({
 }) => {
   return (
     <MUIDialog
+      classes={classes}
       open={open}
       aria-describedby={ariaDescribedby}
       aria-labelledby={ariaLabelledby}

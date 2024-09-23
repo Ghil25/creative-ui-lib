@@ -2,9 +2,9 @@ import React from "react";
 import { ListItemIcon as MUIListItemIcon } from "@mui/material";
 import PropTypes from "prop-types";
 
-const ListItemIcon = ({ children, sx, ...props }) => {
+const ListItemIcon = ({ children, sx, classes, ...props }) => {
   return (
-    <MUIListItemIcon sx={sx} {...props}>
+    <MUIListItemIcon sx={sx} classes={classes} {...props}>
       {children}
     </MUIListItemIcon>
   );

@@ -54,6 +54,7 @@
     "@fontsource/lato": "^5.0.22",
     "@mui/icons-material": "^6.0.2",
     "@mui/material": "^6.0.0",
+    "@mui/x-data-grid": "^7.18.0",
     "solar-icon-set": "^1.0.0"
   }
 }

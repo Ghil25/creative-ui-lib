@@ -3,6 +3,7 @@ import { Collapse as MUICollapse } from "@mui/material";
 
 const Collapse = ({
   addEndListener,
+  classes,
   children,
   collapsedSize,
   component,
@@ -20,6 +21,7 @@ const Collapse = ({
       easing={easing}
       orientation={orientation}
       sx={sx}
+      classes={classes}
       timeout={timeout}
       {...props}
     >

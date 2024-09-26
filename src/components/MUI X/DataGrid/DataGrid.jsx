@@ -229,7 +229,8 @@ const DataGrid = ({
       sx={sx}
       unstable_rowSpanning={unstable_rowSpanning}
       {...props}
-      {...props}
     />
   );
 };
+
+export default DataGrid;

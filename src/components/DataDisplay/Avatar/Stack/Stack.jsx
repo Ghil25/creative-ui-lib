@@ -1,7 +1,8 @@
 import React from "react";
-import Stack from "@mui/material/Stack";
+import { Stack as MUIStack } from "@mui/material";
+import PropTypes from "prop-types";
 
-function NMSStack({
+function Stack({
   direction,
   component,
   spacing,
@@ -11,7 +12,7 @@ function NMSStack({
   ...props
 }) {
   return (
-    <Stack
+    <MUIStack
       component={component}
       direction={direction}
       spacing={spacing}
@@ -20,8 +21,24 @@ function NMSStack({
       {...props}
     >
       {children}
-    </Stack>
+    </MUIStack>
   );
 }
 
-export default NMSStack;
+Stack.propTypes = {
+  direction: PropTypes.oneOf(["row", "column"]),
+  component: PropTypes.elementType,
+  spacing: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+  children: PropTypes.node,
+  sx: PropTypes.oneOfType([
+    PropTypes.arrayOf(
+      PropTypes.oneOfType([PropTypes.func, PropTypes.object, PropTypes.bool])
+    ),
+    PropTypes.func,
+    PropTypes.object,
+    PropTypes.bool,
+  ]),
+  useFlexGap: PropTypes.bool,
+};
+
+export default Stack;

@@ -1,6 +1,7 @@
 import React from "react";
 import Badge from "../Badge";
 import { styled } from "@mui/material/styles";
+import PropTypes from "prop-types";
 
 function StyledBadge({
   children,
@@ -22,8 +23,8 @@ function StyledBadge({
 }) {
   const StyledBadge = styled(Badge)(({ theme }) => ({
     "& .MuiBadge-badge": {
-      backgroundColor: { color },
-      color: { color },
+      backgroundColor: color,
+      color: color,
       boxShadow: `0 0 0 2px ${theme.palette.background.paper}`,
       "&::after": {
         position: "absolute",
@@ -64,11 +65,40 @@ function StyledBadge({
       showZero={showZero}
       slotProps={slotProps}
       slot={slot}
+      variant={variant}
       {...props}
     >
       {children}
     </StyledBadge>
   );
 }
+
+StyledBadge.propTypes = {
+  children: PropTypes.node,
+  color: PropTypes.string,
+  badgeVariant: PropTypes.oneOf(["standard", "dot"]),
+  overlap: PropTypes.oneOf(["circular", "rectangular"]),
+  anchorOrigin: PropTypes.shape({
+    vertical: PropTypes.oneOf(["top", "bottom"]),
+    horizontal: PropTypes.oneOf(["left", "right"]),
+  }),
+  badgeContent: PropTypes.node,
+  max: PropTypes.number,
+  sx: PropTypes.oneOfType([
+    PropTypes.arrayOf(
+      PropTypes.oneOfType([PropTypes.func, PropTypes.object, PropTypes.bool])
+    ),
+    PropTypes.func,
+    PropTypes.object,
+    PropTypes.bool,
+  ]),
+  classes: PropTypes.object,
+  component: PropTypes.elementType,
+  invisible: PropTypes.bool,
+  showZero: PropTypes.bool,
+  slotProps: PropTypes.object,
+  slot: PropTypes.node,
+  variant: PropTypes.oneOf(["standard", "dot"]),
+};
 
 export default StyledBadge;

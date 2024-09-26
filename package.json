@@ -53,8 +53,11 @@
     "@emotion/styled": "^11.13.0",
     "@fontsource/lato": "^5.0.22",
     "@mui/icons-material": "^6.0.2",
+    "@mui/lab": "^6.0.0-beta.10",
     "@mui/material": "^6.0.0",
     "@mui/x-data-grid": "^7.18.0",
+    "@mui/x-date-pickers": "^7.18.0",
+    "dayjs": "^1.11.13",
     "solar-icon-set": "^1.0.0"
   }
 }

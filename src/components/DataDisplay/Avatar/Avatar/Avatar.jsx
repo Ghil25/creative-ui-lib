@@ -1,6 +1,7 @@
 import { Avatar as MUIAvatar } from "@mui/material";
 import React from "react";
-// import PropTypes from "prop-types";
+import PropTypes from "prop-types";
+
 function Avatar({
   alt,
   src,
@@ -36,19 +37,26 @@ function Avatar({
   );
 }
 
-export default Avatar;
+Avatar.propTypes = {
+  alt: PropTypes.string,
+  src: PropTypes.string,
+  sx: PropTypes.oneOfType([
+    PropTypes.arrayOf(
+      PropTypes.oneOfType([PropTypes.func, PropTypes.object, PropTypes.bool])
+    ),
+    PropTypes.func,
+    PropTypes.object,
+    PropTypes.bool,
+  ]),
+  variant: PropTypes.oneOf(["circular", "rounded", "square"]),
+  children: PropTypes.node,
+  classes: PropTypes.object,
+  component: PropTypes.elementType,
+  imgProps: PropTypes.object,
+  sizes: PropTypes.string,
+  slotProps: PropTypes.object,
+  slots: PropTypes.object,
+  srcSet: PropTypes.string,
+};
 
-// MUIAvatar.propTypes = {
-//   alt: PropTypes.string,
-//   src: PropTypes.string,
-//   sx: PropTypes.oneOfType([
-//     PropTypes.arrayOf(
-//       PropTypes.oneOfType([PropTypes.func, PropTypes.object, PropTypes.bool])
-//     ),
-//     PropTypes.func,
-//     PropTypes.object,
-//     PropTypes.bool,
-//   ]),
-//   children: PropTypes.node,
-//   variant: PropTypes.string,
-// };
+export default Avatar;

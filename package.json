@@ -1,5 +1,5 @@
 {
-  "name": "mui-practice-lib-test-test-test",
+  "name": "daryll-ui-test",
   "version": "1.1.0",
   "main": "dist/index.js",
   "module": "dist/index.es.js",

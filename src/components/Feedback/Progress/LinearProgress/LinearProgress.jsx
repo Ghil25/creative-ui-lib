@@ -1,26 +1,49 @@
-import { LinearProgress as MUILinearProgress } from "@mui/material";
+import { CircularProgress as MUICircularProgress } from "@mui/material";
 import React from "react";
+import PropTypes from "prop-types";
 
-const LinearProgress = ({
+const CircularProgress = ({
   classes,
   color,
+  disableShrink,
+  size,
+  thickness,
+  variant,
   sx,
   value,
-  valueBuffer,
-  variant,
   ...props
 }) => {
   return (
-    <MUILinearProgress
+    <MUICircularProgress
       classes={classes}
       color={color}
+      disableShrink={disableShrink}
+      size={size}
+      thickness={thickness}
+      variant={variant}
       sx={sx}
       value={value}
-      valueBuffer={valueBuffer}
-      variant={variant}
       {...props}
     />
   );
 };
 
-export default LinearProgress;
+CircularProgress.propTypes = {
+  classes: PropTypes.object,
+  color: PropTypes.oneOf(["inherit", "primary", "secondary"]),
+  disableShrink: PropTypes.bool,
+  size: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+  thickness: PropTypes.number,
+  variant: PropTypes.oneOf(["determinate", "indeterminate"]),
+  sx: PropTypes.oneOfType([
+    PropTypes.arrayOf(
+      PropTypes.oneOfType([PropTypes.func, PropTypes.object, PropTypes.bool])
+    ),
+    PropTypes.func,
+    PropTypes.object,
+    PropTypes.bool,
+  ]),
+  value: PropTypes.number,
+};
+
+export default CircularProgress;

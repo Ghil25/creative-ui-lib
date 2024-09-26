@@ -2,7 +2,7 @@ import React from "react";
 import { AlertTitle as MUIAlertTitle } from "@mui/material";
 import PropTypes from "prop-types";
 
-const MUIAlertTitle = ({ children, classes, sx }) => {
+const AlertTitle = ({ children, classes, sx }) => {
   return (
     <MUIAlertTitle classes={classes} sx={sx}>
       {children}
@@ -10,7 +10,7 @@ const MUIAlertTitle = ({ children, classes, sx }) => {
   );
 };
 
-MUIAlertTitle.propTypes = {
+AlertTitle.propTypes = {
   children: PropTypes.node,
   classes: PropTypes.object,
   sx: PropTypes.oneOfType([
@@ -23,4 +23,4 @@ MUIAlertTitle.propTypes = {
   ]),
 };
 
-export default MUIAlertTitle;
+export default AlertTitle;

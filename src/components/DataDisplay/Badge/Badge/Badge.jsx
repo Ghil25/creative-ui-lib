@@ -2,7 +2,7 @@ import React from "react";
 import { Badge as MUIBadge } from "@mui/material";
 import PropTypes from "prop-types";
 
-function Badge({
+const Badge = ({
   children,
   color,
   badgeVariant,
@@ -19,7 +19,7 @@ function Badge({
   slots,
   variant,
   ...props
-}) {
+}) => {
   return (
     <MUIBadge
       color={color}
@@ -40,7 +40,7 @@ function Badge({
       {children}
     </MUIBadge>
   );
-}
+};
 
 Badge.propTypes = {
   children: PropTypes.node,

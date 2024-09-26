@@ -1,5 +1,6 @@
 import React from "react";
 import { Snackbar as MUISnackbar } from "@mui/material";
+import PropTypes from "prop-types";
 
 const Snackbar = ({
   action,
@@ -42,6 +43,41 @@ const Snackbar = ({
       {children}
     </MUISnackbar>
   );
+};
+
+Snackbar.propTypes = {
+  action: PropTypes.node,
+  anchorOrigin: PropTypes.shape({
+    horizontal: PropTypes.oneOf(["left", "center", "right"]),
+    vertical: PropTypes.oneOf(["top", "bottom"]),
+  }),
+  autoHideDuration: PropTypes.number,
+  children: PropTypes.node,
+  onClose: PropTypes.func,
+  classes: PropTypes.object,
+  ContentProps: PropTypes.object,
+  disableWindowBlurListener: PropTypes.bool,
+  key: PropTypes.any,
+  message: PropTypes.node.isRequired,
+  open: PropTypes.bool.isRequired,
+  resumeHideDuration: PropTypes.number,
+  sx: PropTypes.oneOfType([
+    PropTypes.arrayOf(
+      PropTypes.oneOfType([PropTypes.func, PropTypes.object, PropTypes.bool])
+    ),
+    PropTypes.func,
+    PropTypes.object,
+    PropTypes.bool,
+  ]),
+  TransitionComponent: PropTypes.elementType,
+  transitionDuration: PropTypes.oneOfType([
+    PropTypes.number,
+    PropTypes.shape({
+      enter: PropTypes.number,
+      exit: PropTypes.number,
+    }),
+  ]),
+  TransitionProps: PropTypes.object,
 };
 
 export default Snackbar;

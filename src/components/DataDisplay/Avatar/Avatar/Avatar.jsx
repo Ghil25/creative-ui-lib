@@ -2,7 +2,7 @@ import { Avatar as MUIAvatar } from "@mui/material";
 import React from "react";
 import PropTypes from "prop-types";
 
-function Avatar({
+const Avatar = ({
   alt,
   src,
   sx,
@@ -16,7 +16,7 @@ function Avatar({
   slots,
   srcSet,
   ...props
-}) {
+}) => {
   return (
     <MUIAvatar
       alt={alt}
@@ -35,7 +35,7 @@ function Avatar({
       {children}
     </MUIAvatar>
   );
-}
+};
 
 Avatar.propTypes = {
   alt: PropTypes.string,

@@ -1,6 +1,6 @@
 import React from "react";
 import { Box as MUIBox } from "@mui/material";
-// import PropTypes from "prop-types";
+import PropTypes from "prop-types";
 
 const Box = ({ children, component, sx, ...props }) => {
   return (
@@ -10,18 +10,17 @@ const Box = ({ children, component, sx, ...props }) => {
   );
 };
 
-// Box.propTypes = {
-//   children: PropTypes.node,
-//   component: PropTypes.elementType,
-//   sx: PropTypes.oneOfType([
-//     PropTypes.arrayOf(
-//       PropTypes.oneOfType([PropTypes.func, PropTypes.object, PropTypes.bool])
-//     ),
-//     PropTypes.func,
-//     PropTypes.object,
-//     PropTypes.bool,
-//   ]),
-//   ...Box.propTypes,
-// };
+Box.propTypes = {
+  children: PropTypes.node,
+  component: PropTypes.elementType,
+  sx: PropTypes.oneOfType([
+    PropTypes.arrayOf(
+      PropTypes.oneOfType([PropTypes.func, PropTypes.object, PropTypes.bool])
+    ),
+    PropTypes.func,
+    PropTypes.object,
+    PropTypes.bool,
+  ]),
+};
 
 export default Box;

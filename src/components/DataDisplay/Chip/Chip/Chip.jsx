@@ -3,7 +3,7 @@ import { Chip as MUIChip } from "@mui/material";
 import ThemeProvider from "../../../../ThemeProvider";
 import PropTypes from "prop-types";
 
-function Chip({
+const Chip = ({
   avatar,
   classes,
   clickable,
@@ -19,7 +19,7 @@ function Chip({
   sx,
   variant,
   ...props
-}) {
+}) => {
   return (
     <ThemeProvider>
       <MUIChip
@@ -42,7 +42,7 @@ function Chip({
       />
     </ThemeProvider>
   );
-}
+};
 
 Chip.propTypes = {
   avatar: PropTypes.element,

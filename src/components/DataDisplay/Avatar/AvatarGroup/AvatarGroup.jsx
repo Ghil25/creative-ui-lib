@@ -2,7 +2,7 @@ import React from "react";
 import { AvatarGroup as MUIAvatarGroup } from "@mui/material";
 import PropTypes from "prop-types";
 
-function AvatarGroup({
+const AvatarGroup = ({
   max,
   total,
   sx,
@@ -16,7 +16,7 @@ function AvatarGroup({
   spacing,
   variant,
   ...props
-}) {
+}) => {
   return (
     <MUIAvatarGroup
       max={max}
@@ -35,7 +35,7 @@ function AvatarGroup({
       {children}
     </MUIAvatarGroup>
   );
-}
+};
 
 AvatarGroup.propTypes = {
   max: PropTypes.number,

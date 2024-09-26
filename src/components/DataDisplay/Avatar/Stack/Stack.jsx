@@ -2,7 +2,7 @@ import React from "react";
 import { Stack as MUIStack } from "@mui/material";
 import PropTypes from "prop-types";
 
-function Stack({
+const Stack = ({
   direction,
   component,
   spacing,
@@ -10,7 +10,7 @@ function Stack({
   sx,
   useFlexGap,
   ...props
-}) {
+}) => {
   return (
     <MUIStack
       component={component}
@@ -23,7 +23,7 @@ function Stack({
       {children}
     </MUIStack>
   );
-}
+};
 
 Stack.propTypes = {
   direction: PropTypes.oneOf(["row", "column"]),

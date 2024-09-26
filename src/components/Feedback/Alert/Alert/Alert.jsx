@@ -1,5 +1,6 @@
 import React from "react";
 import { Alert as MUIAlert } from "@mui/material";
+import PropTypes from "prop-types";
 
 const Alert = React.forwardRef(
   (
@@ -20,7 +21,6 @@ const Alert = React.forwardRef(
       slots,
       sx,
       variant,
-
       ...props
     },
     ref
@@ -50,5 +50,31 @@ const Alert = React.forwardRef(
     );
   }
 );
+
+Alert.propTypes = {
+  action: PropTypes.element,
+  children: PropTypes.node,
+  classes: PropTypes.object,
+  closeText: PropTypes.string,
+  color: PropTypes.oneOf(["default", "error", "info", "success", "warning"]),
+  components: PropTypes.object,
+  componentProps: PropTypes.object,
+  icon: PropTypes.element,
+  iconMapping: PropTypes.object,
+  onClose: PropTypes.func,
+  role: PropTypes.string,
+  severity: PropTypes.oneOf(["error", "info", "success", "warning"]),
+  slotProps: PropTypes.object,
+  slots: PropTypes.object,
+  sx: PropTypes.oneOfType([
+    PropTypes.arrayOf(
+      PropTypes.oneOfType([PropTypes.func, PropTypes.object, PropTypes.bool])
+    ),
+    PropTypes.func,
+    PropTypes.object,
+    PropTypes.bool,
+  ]),
+  variant: PropTypes.oneOf(["filled", "outlined", "standard"]),
+};
 
 export default Alert;

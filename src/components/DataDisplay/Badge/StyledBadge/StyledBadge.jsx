@@ -3,7 +3,7 @@ import Badge from "../Badge";
 import { styled } from "@mui/material/styles";
 import PropTypes from "prop-types";
 
-function StyledBadge({
+const StyledBadge = ({
   children,
   color,
   badgeVariant,
@@ -20,7 +20,7 @@ function StyledBadge({
   slot,
   variant,
   ...props
-}) {
+}) => {
   const StyledBadge = styled(Badge)(({ theme }) => ({
     "& .MuiBadge-badge": {
       backgroundColor: color,
@@ -53,7 +53,7 @@ function StyledBadge({
   return (
     <StyledBadge
       color={color}
-      variant={badgeVariant}
+      badgeVariant={badgeVariant}
       overlap={overlap}
       anchorOrigin={anchorOrigin}
       badgeContent={badgeContent}
@@ -71,7 +71,7 @@ function StyledBadge({
       {children}
     </StyledBadge>
   );
-}
+};
 
 StyledBadge.propTypes = {
   children: PropTypes.node,

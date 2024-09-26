@@ -1,7 +1,6 @@
 export { Avatar } from "./Avatar";
 export { AvatarGroup } from "./Avatar";
 
-export { Stack } from "./Avatar";
 export { Badge } from "./Badge";
 export { StyledBadge } from "./Badge";
 
@@ -14,4 +13,4 @@ export { ListItemIcon } from "./List";
 export { ListItemText } from "./List";
 export { ListSubheader } from "./List";
 export { Divider } from "./List";
-export { Box } from "./List";
+export { Collapse } from "./List";

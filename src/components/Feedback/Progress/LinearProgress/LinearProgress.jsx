@@ -16,7 +16,6 @@ const LinearProgress = ({
     <MUILinearProgress
       classes={classes}
       color={color}
-      size={size}
       thickness={thickness}
       variant={variant}
       sx={sx}

@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { Button as MUIButton } from "@mui/material";
-import ThemeProvider from "../../../ThemeProvider";
+import ThemeProvider from "../../../../ThemeProvider";
 
 const Button = ({
   label = "Button",

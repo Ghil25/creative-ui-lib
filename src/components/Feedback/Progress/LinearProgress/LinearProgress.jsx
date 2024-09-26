@@ -16,10 +16,10 @@ const LinearProgress = ({
     <MUILinearProgress
       classes={classes}
       color={color}
-      thickness={thickness}
       variant={variant}
       sx={sx}
       value={value}
+      valueBuffer={valueBuffer}
       {...props}
     />
   );

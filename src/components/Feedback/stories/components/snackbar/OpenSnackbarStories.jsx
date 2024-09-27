@@ -1,6 +1,6 @@
 import React from "react";
 import Icon from "../../../../Foundation/Icons/Icon";
-import Button from "../../../../Input/Button";
+import { Button } from "../../../../Input";
 import Snackbar from "../../../Snackbar/Snackbar";
 import IconButton from "../../../../Input/Button/IconButton/IconButton";
 const OpenSnackbar = ({ button1, button2, iconbutton, icon, ...props }) => {

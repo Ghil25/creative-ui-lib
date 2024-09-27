@@ -1,5 +1,5 @@
 import React from "react";
-import Stack from "../../../../DataDisplay/Avatar/Stack/Stack";
+import Stack from "../../../../Foundation/Layout/Stack/Stack";
 
 import Alert from "../../../Alert/Alert/Alert";
 import Icon from "../../../../Foundation/Icons/Icon";

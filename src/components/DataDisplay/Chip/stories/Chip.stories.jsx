@@ -1,7 +1,8 @@
 import React from "react";
 import { Chip } from "../../Chip";
 
-import { Avatar, Stack } from "../../Avatar";
+import { Avatar } from "../../Avatar";
+import Stack from "../../../Foundation/Layout/Stack/Stack";
 import Icon from "../../../Foundation/Icons/Icon";
 
 export default {

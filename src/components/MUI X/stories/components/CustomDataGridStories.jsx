@@ -3,7 +3,7 @@ import DataGrid from "../../DataGrid/DataGrid";
 import Avatar from "../../../DataDisplay/Avatar/Avatar/Avatar";
 import AvatarGroup from "../../../DataDisplay/Avatar/AvatarGroup/AvatarGroup";
 import Chip from "../../../DataDisplay/Chip/Chip/Chip";
-import Stack from "../../../DataDisplay/Avatar/Stack/Stack";
+import Stack from "../../../Foundation/Layout/Stack/Stack";
 import Icon from "../../../Foundation/Icons/Icon";
 import Button from "../../../Input/Button/Button";
 

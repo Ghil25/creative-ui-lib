@@ -1,6 +1,6 @@
 import React from "react";
 import LinearProgress from "../../../Progress/LinearProgress/LinearProgress";
-import Stack from "../../../../DataDisplay/Avatar/Stack/Stack";
+import Stack from "../../../../Foundation/Layout/Stack/Stack";
 import ThemeProvider from "../../../../../ThemeProvider";
 
 const LinearProgressDemo = ({ stack, linearProgress, ...props }) => {

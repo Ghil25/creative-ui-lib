@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 
 import ThemeProvider from "../../../../../ThemeProvider";
-import Typography from "../../../../Typography/Typography";
+import Typography from "../../../../Foundation/Typography/Typography";
 import Pagination from "../../../Pagination/Pagination/Pagination";
-import Stack from "../../../../DataDisplay/Avatar/Stack/Stack";
+import Stack from "../../../../Foundation/Layout/Stack/Stack";
 
 const PaginationControlledDemo = () => {
   const [page, setPage] = useState(1);

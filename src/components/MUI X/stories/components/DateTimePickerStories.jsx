@@ -1,7 +1,7 @@
 import React from "react";
-import Grid from "@mui/material/Grid2";
-import Typography from "../../../Typography/Typography";
-import Stack from "../../../DataDisplay/Avatar/Stack/Stack";
+import Grid from "../../../Foundation/Layout/Grid/Grid";
+import Typography from "../../../Foundation/Typography/Typography";
+import Stack from "../../../Foundation/Layout/Stack/Stack";
 import dayjs from "dayjs";
 import { InputAdornment, IconButton } from "@mui/material";
 import Icon from "../../../Foundation/Icons/Icon";

@@ -10,7 +10,7 @@ import { Avatar } from "../../../../DataDisplay/Avatar";
 // } from "../../../../DataDisplay/List";
 
 import { Button } from "../../../../Input";
-import Typography from "../../../../Typography/Typography";
+import Typography from "../../../../Foundation/Typography/Typography";
 
 // import Button from "../../../../Input/Button/Button";
 // import Typography from "../../../../Typography/Typography";

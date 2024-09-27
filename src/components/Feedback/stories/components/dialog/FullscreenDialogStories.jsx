@@ -1,6 +1,7 @@
 import React, { forwardRef } from "react";
 import { Dialog, Slide } from "../../../Dialog";
-import Divider from "@mui/material/Divider";
+// import Divider from "@mui/material/Divider";
+import Divider from "../../../../DataDisplay/List/Divider/Divider";
 import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
 
@@ -10,7 +11,7 @@ import ListItemButton from "../../../../DataDisplay/List/ListItemButton/ListItem
 import ListItemText from "../../../../DataDisplay/List/ListItemText/ListItemText";
 
 import { Button } from "../../../../Input";
-import Typography from "../../../../Typography/Typography";
+import Typography from "../../../../Foundation/Typography/Typography";
 
 import Icon from "../../../../Foundation/Icons/Icon";
 

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-import Box from "../../../../DataDisplay/List/Box/Box";
+import Box from "../../../../Foundation/Layout/Box/Box";
 import Avatar from "../../../../DataDisplay/Avatar/Avatar/Avatar";
 import Menu from "../../../Menu/Menu/Menu";
 import MenuItem from "../../../Menu/MenuItem/MenuItem";
@@ -8,7 +8,7 @@ import Icon from "../../../../Foundation/Icons/Icon";
 import ListItemIcon from "../../../../DataDisplay/List/ListItemIcon/ListItemIcon";
 import Divider from "../../../../DataDisplay/List/Divider/Divider";
 import IconButton from "../../../../Input/Button/IconButton/IconButton";
-import Typography from "../../../../Typography/Typography";
+import Typography from "../../../../Foundation/Typography/Typography";
 import { Tooltip } from "@mui/material";
 
 const AccountMenuDemo = () => {

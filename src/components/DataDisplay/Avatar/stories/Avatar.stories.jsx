@@ -1,10 +1,9 @@
 import React from "react";
-// import NMSAvatar from "../Avatar";
-// import NMSAvatarGroup from "../AvatarGroup";
-// import NMSStack from "../Stack";
+
 import Badge from "../../Badge/Badge";
 import Icon from "../../../Foundation/Icons/Icon";
-import { Avatar, AvatarGroup, Stack } from "..";
+import { Avatar, AvatarGroup } from "..";
+import Stack from "../../../Foundation/Layout/Stack/Stack";
 export default {
   title: "Components/DataDisplay/Avatar",
   component: Avatar,

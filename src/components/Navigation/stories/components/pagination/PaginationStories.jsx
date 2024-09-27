@@ -1,6 +1,6 @@
 import React from "react";
 import Pagination from "../../../Pagination/Pagination/Pagination";
-import Stack from "../../../../DataDisplay/Avatar/Stack/Stack";
+import Stack from "../../../../Foundation/Layout/Stack/Stack";
 const PaginationDemo = ({ stack, paginations }) => {
   return (
     <Stack {...stack}>

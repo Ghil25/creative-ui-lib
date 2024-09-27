@@ -2,7 +2,7 @@
 // import { Stack } from "../../../../DataDisplay/";
 import React from "react";
 import CircularProgress from "../../../Progress/CircularProgress/CircularProgress";
-import Stack from "../../../../DataDisplay/Avatar/Stack/Stack";
+import Stack from "../../../../Foundation/Layout/Stack/Stack";
 import ThemeProvider from "../../../../../ThemeProvider";
 const CircularProgressDemo = ({ stack, circularProgress, ...props }) => {
   return (
